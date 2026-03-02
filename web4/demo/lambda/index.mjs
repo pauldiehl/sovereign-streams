@@ -15,6 +15,7 @@ import governance from './governance.json' with { type: 'json' };
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 const ALLOWED_ORIGINS = [
+  'https://pauldiehl.github.io',
   'https://manvshealth.github.io',
   'http://localhost:8080',
   'http://localhost:3000',
