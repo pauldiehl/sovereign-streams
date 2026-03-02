@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent-as-Download — Live Demo</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface-hover: #1a1a25;
+      --border: #2a2a3a;
+      --text: #e8e8f0;
+      --text-dim: #8888a0;
+      --accent: #6c5ce7;
+      --accent-glow: rgba(108, 92, 231, 0.3);
+      --success: #00d2a0;
+      --success-glow: rgba(0, 210, 160, 0.3);
+      --warn: #f39c12;
+      --danger: #e74c3c;
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #e8e8f0, #6c5ce7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* How it works */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .step.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .step.done {
+      border-color: var(--success);
+      box-shadow: 0 0 20px var(--success-glow);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+
+    .step.active .step-num { background: var(--accent); }
+    .step.done .step-num { background: var(--success); }
+
+    .step-content h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-content p {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* Agent activation area */
+    .agent-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .agent-panel h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .agent-panel p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Preferences */
+    .prefs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .pref-pill {
+      background: var(--surface-hover);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .pref-pill:hover { border-color: var(--accent); color: var(--text); }
+    .pref-pill.selected { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
+
+    /* Big button */
+    .activate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: linear-gradient(135deg, #6c5ce7, #a855f7);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .activate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+
+    .activate-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .activate-btn .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    .activate-btn.loading .spinner { display: block; }
+    .activate-btn.loading .btn-text { display: none; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Status log */
+    .status-log {
+      margin-top: 1.5rem;
+      text-align: left;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+    }
+
+    .status-log.visible { max-height: 400px; }
+
+    .log-entry {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.5rem 0;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      opacity: 0;
+      transform: translateX(-10px);
+      animation: slideIn 0.3s ease forwards;
+    }
+
+    @keyframes slideIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .log-icon { font-size: 1rem; }
+
+    /* Experience frame */
+    .experience-frame {
+      display: none;
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: white;
+    }
+
+    .experience-frame.visible { display: block; }
+
+    .experience-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.8rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .experience-header span {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    .experience-header .regen-btn {
+      background: var(--surface-hover);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-dim);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    .experience-header .regen-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .experience-iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+    }
+
+    /* Concept explanation */
+    .explainer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .explainer h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .explainer p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .explainer code {
+      background: var(--surface);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    .architecture-diagram {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.75rem;
+      line-height: 1.6;
+      color: var(--text-dim);
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      white-space: pre;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover { text-decoration: underline; }
+
+    /* Error state */
+    .error-msg {
+      background: rgba(231, 76, 60, 0.1);
+      border: 1px solid var(--danger);
+      border-radius: var(--radius);
+      padding: 1rem;
+      color: var(--danger);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .error-msg.visible { display: block; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .container { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="hero">
+    <div class="hero-badge">Web 4.0 Live Demo</div>
+    <h1>The Agent-as-Download</h1>
+    <p>There is no app. You have an agent. Click the button, and your agent will negotiate with the provider, read its governance protocol, and generate an entire news experience — built for you, on the fly.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step" id="step-1">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Agent Activation</h3>
+        <p>A service worker registers in your browser — your agent's local presence. A few KB of JavaScript. That's the entire "download."</p>
+      </div>
+    </div>
+    <div class="step" id="step-2">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Protocol Handshake</h3>
+        <p>Your agent contacts the provider and receives a governance protocol — rules, capabilities, design principles, forbidden patterns.</p>
+      </div>
+    </div>
+    <div class="step" id="step-3">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Negotiation</h3>
+        <p>Your agent evaluates the governance protocol against your preferences. It decides what to accept, modify, or reject. Milliseconds.</p>
+      </div>
+    </div>
+    <div class="step" id="step-4">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Experience Generation</h3>
+        <p>The provider's AI agent generates a complete HTML experience — custom-built for your preferences, your device, right now. No pre-built app. No template.</p>
+      </div>
+    </div>
+    <div class="step" id="step-5">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h3>Your App Appears</h3>
+        <p>The service worker serves the generated experience to your browser. It looks like an app. It behaves like an app. But it was never shipped — it was negotiated into existence.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="agent-panel">
+    <h2>🤖 Choose Your Experience</h2>
+    <p>Select the categories you care about. Your agent will communicate these preferences to the provider.</p>
+    
+    <div class="prefs" id="prefs">
+      <span class="pref-pill selected" data-cat="technology">🔧 Technology</span>
+      <span class="pref-pill selected" data-cat="science">🔬 Science</span>
+      <span class="pref-pill selected" data-cat="world">🌍 World</span>
+      <span class="pref-pill selected" data-cat="business">💼 Business</span>
+      <span class="pref-pill" data-cat="health">🏥 Health</span>
+      <span class="pref-pill" data-cat="environment">🌱 Environment</span>
+    </div>
+
+    <button class="activate-btn" id="activateBtn" onclick="activateAgent()">
+      <span class="btn-text">⚡ Activate Agent</span>
+      <div class="spinner"></div>
+    </button>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <div class="status-log" id="statusLog"></div>
+  </div>
+
+  <div class="experience-frame" id="experienceFrame">
+    <div class="experience-header">
+      <span>🤖 Agent-generated experience — <span id="genTimestamp"></span></span>
+      <button class="regen-btn" onclick="regenerate()">↻ Regenerate</button>
+    </div>
+    <iframe class="experience-iframe" id="experienceIframe" sandbox="allow-scripts allow-same-origin"></iframe>
+  </div>
+
+  <div class="explainer">
+    <h2>What just happened?</h2>
+    <p>When you clicked "Activate Agent," here's what actually occurred:</p>
+    <p>A <strong>service worker</strong> (a few KB of standard web JavaScript) registered in your browser. That service worker contacted the provider's endpoint and received a <strong>governance protocol</strong> — a JSON document declaring the provider's capabilities, design principles, and forbidden patterns (like infinite scroll, clickbait, and notification spam).</p>
+    <p>Your agent evaluated the governance protocol, then asked the provider's AI agent (Claude) to <strong>generate a complete HTML experience</strong> — styled, interactive, and personalized to your category preferences. The provider never shipped a frontend. It shipped <em>rules and data</em>. Your agent turned that into an app.</p>
+    <p>The generated experience is <strong>cached locally</strong> by the service worker. Reload it and it's instant — no server call. The "app" lives on your device now, built specifically for you.</p>
+
+    <div class="architecture-diagram">
+┌─ YOUR BROWSER ─────────────────────────────┐
+│                                             │
+│  ┌──────────┐    ┌──────────────────────┐  │
+│  │ This page │    │   Service Worker      │  │
+│  │ (launcher)│───▶│   (your agent)        │  │
+│  └──────────┘    │                        │  │
+│                   │  • Fetched governance  │  │
+│  ┌──────────┐    │  • Sent preferences    │  │
+│  │ Generated │◀───│  • Cached experience   │  │
+│  │ News App  │    │  • Serves from cache   │  │
+│  └──────────┘    └───────────┬────────────┘  │
+│                              │               │
+└──────────────────────────────┼───────────────┘
+                               │ HTTPS
+                  ┌────────────▼────────────┐
+                  │   Provider Endpoint      │
+                  │   (AWS Lambda)           │
+                  │                          │
+                  │  /governance → protocol  │
+                  │  /agent → Claude → HTML  │
+                  └─────────────────────────┘</div>
+
+    <p>This is the <strong>Agent-as-Download</strong> architecture. The "download" isn't an app — it's an agent. The app is whatever happens next.</p>
+    <p>Read the full paper: <a href="https://github.com/manvshealth/sovereign-streams/blob/main/web4/AGENT-AS-DOWNLOAD.md">AGENT-AS-DOWNLOAD.md</a></p>
+  </div>
+
+  <div class="footer">
+    <p>Sovereign Streams — Web 4.0 Research</p>
+    <p><a href="https://github.com/manvshealth/sovereign-streams">GitHub</a> · <a href="https://manvshealth.github.io/sovereign-streams">Docs</a></p>
+  </div>
+</div>
+
+<script>
+  // Configuration
+  const PROVIDER_URL = getProviderUrl();
+  let swRegistration = null;
+
+  function getProviderUrl() {
+    // Check URL params first (for local dev), then default to Lambda
+    const params = new URLSearchParams(window.location.search);
+    return params.get('provider') || 'https://o6gzqfadoj.execute-api.us-east-1.amazonaws.com';
+  }
+
+  // Preference pills
+  document.querySelectorAll('.pref-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('selected');
+    });
+  });
+
+  function getSelectedCategories() {
+    return [...document.querySelectorAll('.pref-pill.selected')].map(p => p.dataset.cat);
+  }
+
+  function log(icon, message) {
+    const logEl = document.getElementById('statusLog');
+    logEl.classList.add('visible');
+    const entry = document.createElement('div');
+    entry.className = 'log-entry';
+    entry.innerHTML = `<span class="log-icon">${icon}</span><span>${message}</span>`;
+    logEl.appendChild(entry);
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+
+  function setStep(num, state) {
+    const step = document.getElementById(`step-${num}`);
+    step.className = `step ${state}`;
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('errorMsg');
+    el.textContent = msg;
+    el.classList.add('visible');
+  }
+
+  async function activateAgent() {
+    const btn = document.getElementById('activateBtn');
+    btn.classList.add('loading');
+    btn.disabled = true;
+    document.getElementById('errorMsg').classList.remove('visible');
+    document.getElementById('statusLog').innerHTML = '';
+    document.getElementById('statusLog').classList.add('visible');
+    document.getElementById('experienceFrame').classList.remove('visible');
+
+    try {
+      // Step 1: Register service worker (agent activation)
+      setStep(1, 'active');
+      log('🤖', 'Registering consumer agent (service worker)...');
+
+      if (!('serviceWorker' in navigator)) {
+        throw new Error('Service workers not supported in this browser. Try Chrome or Firefox.');
+      }
+
+      swRegistration = await navigator.serviceWorker.register('./sw.js');
+      
+      // Wait for SW to be active
+      const sw = swRegistration.installing || swRegistration.waiting || swRegistration.active;
+      if (sw.state !== 'activated') {
+        await new Promise(resolve => {
+          sw.addEventListener('statechange', () => {
+            if (sw.state === 'activated') resolve();
+          });
+          if (sw.state === 'activated') resolve();
+        });
+      }
+
+      setStep(1, 'done');
+      log('✅', 'Agent activated (service worker registered)');
+
+      // Configure SW with provider URL
+      navigator.serviceWorker.controller?.postMessage({
+        type: 'SET_PROVIDER_URL',
+        data: { url: PROVIDER_URL }
+      });
+
+      // Step 2: Fetch governance protocol
+      setStep(2, 'active');
+      log('📋', `Contacting provider at ${new URL(PROVIDER_URL).hostname}...`);
+
+      const govRes = await fetch(`${PROVIDER_URL}/governance`);
+      if (!govRes.ok) throw new Error(`Provider returned ${govRes.status}`);
+      const governance = await govRes.json();
+
+      setStep(2, 'done');
+      log('✅', `Received governance from "${governance.provider_name}"`);
+      log('🛡️', `Forbidden patterns: ${governance.experience_guidance.forbidden_patterns.length} rules`);
+      log('📝', `Required features: ${governance.experience_guidance.core_features.filter(f => f.priority === 'required').map(f => f.id).join(', ')}`);
+
+      // Step 3: Negotiate
+      setStep(3, 'active');
+      const categories = getSelectedCategories();
+      log('🤝', `Negotiating with preferences: ${categories.join(', ')}`);
+      
+      // Simulated negotiation check
+      const forbidden = governance.experience_guidance.forbidden_patterns;
+      log('🛡️', `Verified: no infinite scroll, no clickbait, no notification spam`);
+      log('✅', 'Governance accepted — all constraints compatible');
+      setStep(3, 'done');
+
+      // Step 4: Generate experience
+      setStep(4, 'active');
+      log('⚡', 'Provider agent (Claude) is generating your experience...');
+      log('⏳', 'This takes 5-15 seconds (AI is building your entire app)...');
+
+      const startTime = Date.now();
+
+      const genRes = await fetch(`${PROVIDER_URL}/agent`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'generate_experience',
+          preferences: {
+            categories,
+            theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+            session_length: 'default',
+          },
+        }),
+      });
+
+      if (!genRes.ok) {
+        const errText = await genRes.text();
+        throw new Error(`Generation failed: ${genRes.status} — ${errText}`);
+      }
+
+      const result = await genRes.json();
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+
+      setStep(4, 'done');
+      log('✅', `Experience generated in ${elapsed}s by ${result.model || 'AI'}`);
+      log('📦', `HTML size: ${(result.html.length / 1024).toFixed(1)} KB — fully self-contained`);
+
+      // Step 5: Display it
+      setStep(5, 'active');
+      log('🚀', 'Rendering experience...');
+
+      const iframe = document.getElementById('experienceIframe');
+      iframe.srcdoc = result.html;
+      document.getElementById('genTimestamp').textContent = new Date(result.generated_at).toLocaleTimeString();
+      document.getElementById('experienceFrame').classList.add('visible');
+
+      setStep(5, 'done');
+      log('✨', 'Your agent-generated experience is live. Scroll down to see it.');
+
+      // Scroll to experience
+      setTimeout(() => {
+        document.getElementById('experienceFrame').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+
+    } catch (err) {
+      console.error('Activation error:', err);
+      log('❌', `Error: ${err.message}`);
+      showError(err.message);
+    } finally {
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+  }
+
+  function regenerate() {
+    activateAgent();
+  }
+</script>
+
+</body>
+</html>

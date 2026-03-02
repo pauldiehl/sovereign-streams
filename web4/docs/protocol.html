@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEP Protocol Specification &mdash; Web 4.0</title>
+  <meta name="description" content="Stream Exchange Protocol (SEP) v0.1.0 specification. Defines how stream providers and consumers exchange metadata-driven content.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Web 4.0 <span>Sovereign Streams</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="protocol.html" class="active">Protocol</a></li>
+        <li><a href="use-cases.html">Use Cases</a></li>
+        <li><a href="economics.html">Economics</a></li>
+        <li><a href="https://github.com/sovereign-streams/web4/blob/main/MANIFESTO.md">Manifesto</a></li>
+        <li><a href="https://github.com/sovereign-streams">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="padding: 3.5rem 1.5rem 3rem;">
+    <div class="hero-content">
+      <h1>Stream Exchange <span class="accent">Protocol</span></h1>
+      <p class="tagline">SEP v0.1.0 &mdash; An open protocol defining how stream providers and stream consumers communicate in a decentralized content ecosystem.</p>
+      <div class="hero-cta">
+        <a href="https://github.com/sovereign-streams/web4/tree/main/spec/2026-02-28" class="btn btn-primary">View JSON Schemas</a>
+        <a href="https://github.com/sovereign-streams/web4/blob/main/spec/SEP-EVOLUTION.md" class="btn btn-secondary">Roadmap</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Protocol Overview</h2>
+        <p>SEP is content-agnostic and meta-first. Streams exchange enriched metadata, not full media. Content is lazy-loaded by the consumer only when needed.</p>
+      </div>
+
+      <div class="flow-diagram">Consumer &mdash;[intent]&rarr; Provider &mdash;[enriched payload]&rarr; Consumer &mdash;[telemetry]&rarr; Provider</div>
+
+      <div style="margin-top: 2.5rem;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Five Core Schemas</h3>
+        <div class="card-grid">
+          <div class="card">
+            <h3>1. Enrichment Envelope</h3>
+            <p>The foundational data structure. Every content item carries source metadata, semantic enrichment scores, emotional tone analysis, and session-fit indicators.</p>
+          </div>
+          <div class="card">
+            <h3>2. Consumer Intent</h3>
+            <p>How consumers express what they want: session type, duration, category weights, hard filters, context, and disclosure level.</p>
+          </div>
+          <div class="card">
+            <h3>3. Provider Response</h3>
+            <p>How providers return results: enriched payloads with confidence, suggested arcs, errors, and redirects.</p>
+          </div>
+          <div class="card">
+            <h3>4. Provider Manifest</h3>
+            <p>How providers advertise capabilities: exchange models, content types, guardrails, rate limits.</p>
+          </div>
+          <div class="card">
+            <h3>5. Telemetry</h3>
+            <p>Optional engagement signals: per-item viewing data and session-level satisfaction. Always opt-in.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exchange Models -->
+  <section class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Exchange Models</h2>
+        <p>SEP supports three exchange patterns. Both sides declare support during the initial handshake.</p>
+      </div>
+
+      <div class="exchange-models">
+        <div class="exchange-model">
+          <h4>Model A: Curated Payload</h4>
+          <p>Simplest model. Consumer sends intent, provider returns a curated set. Single request-response. Provider has more influence over results.</p>
+          <pre><code>Consumer --[intent]--> Provider
+Consumer <--[curated payload]-- Provider</code></pre>
+        </div>
+
+        <div class="exchange-model recommended">
+          <span class="exchange-model-badge">Recommended</span>
+          <h4>Model C: Negotiated Exchange</h4>
+          <p>Multi-round exchange with progressive refinement. State tokens enable continuity. Consumer can reveal more over successive rounds.</p>
+          <pre><code>Round 1:
+  Consumer --[intent]--> Provider
+  Consumer <--[payload + token]--> Provider
+Round 2:
+  Consumer --[intent + token]--> Provider
+  Consumer <--[refined payload]--> Provider</code></pre>
+        </div>
+
+        <div class="exchange-model">
+          <h4>Model B: Full Index Browse</h4>
+          <p>Provider exposes entire metadata index. Maximum consumer sovereignty. Most expensive for provider.</p>
+          <pre><code>Consumer --[query]--> Provider Index
+Consumer <--[raw results]-- Provider
+Consumer applies local PAE filtering</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema: Enrichment Envelope -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="schema-section">
+        <h3>Enrichment Envelope</h3>
+        <p>The core data structure of SEP. Every content item in a stream carries an enrichment envelope.</p>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Top-Level Fields</h4>
+        <table class="field-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Status</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sep_version</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Protocol version this envelope conforms to</td>
+            </tr>
+            <tr>
+              <td><code>item_id</code></td>
+              <td>uuid</td>
+              <td><span class="field-required">required</span></td>
+              <td>Globally unique identifier for this content item</td>
+            </tr>
+            <tr>
+              <td><code>source</code></td>
+              <td>object</td>
+              <td><span class="field-required">required</span></td>
+              <td>Origin platform, URL, content type, and duration</td>
+            </tr>
+            <tr>
+              <td><code>meta</code></td>
+              <td>object</td>
+              <td><span class="field-required">required</span></td>
+              <td>Title, creator, publication date, tags, language, thumbnail</td>
+            </tr>
+            <tr>
+              <td><code>enrichment</code></td>
+              <td>object</td>
+              <td><span class="field-required">required</span></td>
+              <td>LLM-generated semantic scores and classifications</td>
+            </tr>
+            <tr>
+              <td><code>provider</code></td>
+              <td>object</td>
+              <td><span class="field-required">required</span></td>
+              <td>Provider identity and guardrail attestation</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Enrichment Scores</h4>
+        <table class="field-table">
+          <thead>
+            <tr><th>Score</th><th>Range</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>categories</code></td><td>array</td><td>Semantic categories with confidence scores (e.g., fitness: 0.9, humor: 0.7)</td></tr>
+            <tr><td><code>emotional_tone</code></td><td>object</td><td>Primary/secondary tone (calm, focused, energized, amused, inspired, reflective) + harmful content flags</td></tr>
+            <tr><td><code>energy_level</code></td><td>0&ndash;1</td><td>From very calm/meditative to very high energy/intense</td></tr>
+            <tr><td><code>cognitive_load</code></td><td>0&ndash;1</td><td>Cognitive effort required, from passive to dense</td></tr>
+            <tr><td><code>motivation_score</code></td><td>0&ndash;1</td><td>How motivating or action-inspiring the content is</td></tr>
+            <tr><td><code>humor_score</code></td><td>0&ndash;1</td><td>Humor content level, from none to primarily comedic</td></tr>
+            <tr><td><code>skill_transfer_score</code></td><td>0&ndash;1</td><td>Actionable skill/knowledge transferred</td></tr>
+            <tr><td><code>production_quality</code></td><td>0&ndash;1</td><td>Audio, video, editing, presentation quality</td></tr>
+            <tr><td><code>session_fit</code></td><td>object</td><td>Booleans: good_opener, good_builder, good_peak, good_closer</td></tr>
+          </tbody>
+        </table>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Emotional Tone Flags</h4>
+        <p>Boolean flags for harmful content patterns. Enable consumers to set hard exclusion filters:</p>
+        <table class="field-table">
+          <thead>
+            <tr><th>Flag</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>rage_bait</code></td><td>Designed to provoke anger for engagement</td></tr>
+            <tr><td><code>humiliation</code></td><td>Derives entertainment from humiliating individuals</td></tr>
+            <tr><td><code>shock_content</code></td><td>Relies on shock value to drive engagement</td></tr>
+            <tr><td><code>inflammatory</code></td><td>Designed to inflame divisions or provoke heated reactions</td></tr>
+            <tr><td><code>sexually_explicit</code></td><td>Contains sexually explicit material</td></tr>
+            <tr><td><code>violence</code></td><td>Contains graphic violence or glorifies violent behavior</td></tr>
+          </tbody>
+        </table>
+
+        <p class="code-label">Example Envelope</p>
+        <pre><code>{
+  "sep_version": "0.1.0",
+  "item_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "source": {
+    "platform": "youtube",
+    "origin_url": "https://youtube.com/watch?v=example",
+    "origin_id": "example123",
+    "content_type": "video",
+    "duration_seconds": 180
+  },
+  "meta": {
+    "title": "5-Minute Morning Mobility Routine",
+    "creator": "Movement Daily",
+    "published": "2026-02-15T10:00:00Z",
+    "original_tags": ["fitness", "mobility", "morning routine"],
+    "language": "en",
+    "thumbnail_url": "https://img.youtube.com/vi/example123/maxresdefault.jpg"
+  },
+  "enrichment": {
+    "schema_version": "0.1.0",
+    "enriched_at": "2026-02-28T12:00:00Z",
+    "categories": [
+      { "id": "fitness", "confidence": 0.95 },
+      { "id": "skill_building", "confidence": 0.7 }
+    ],
+    "emotional_tone": {
+      "primary": "energized",
+      "secondary": "focused",
+      "rage_bait": false,
+      "humiliation": false,
+      "shock_content": false,
+      "inflammatory": false,
+      "sexually_explicit": false,
+      "violence": false
+    },
+    "energy_level": 0.7,
+    "cognitive_load": 0.3,
+    "motivation_score": 0.8,
+    "humor_score": 0.1,
+    "skill_transfer_score": 0.85,
+    "production_quality": 0.8,
+    "session_fit": {
+      "good_opener": true,
+      "good_builder": true,
+      "good_peak": false,
+      "good_closer": false
+    }
+  },
+  "provider": {
+    "id": "good-vibes-main",
+    "guardrail_pass": true,
+    "guardrail_version": "0.1.0"
+  }
+}</code></pre>
+      </div>
+
+      <!-- Consumer Intent -->
+      <div class="schema-section">
+        <h3>Consumer Intent</h3>
+        <p>Describes what a consumer is requesting from a provider. The consumer always controls disclosure.</p>
+
+        <table class="field-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Status</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sep_version</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Protocol version</td>
+            </tr>
+            <tr>
+              <td><code>consumer_id</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Consumer identifier (can be anonymous)</td>
+            </tr>
+            <tr>
+              <td><code>intent.session_type</code></td>
+              <td>enum</td>
+              <td><span class="field-required">required</span></td>
+              <td><code>composed</code> (structured arc), <code>browse</code> (open exploration), <code>search</code> (targeted query)</td>
+            </tr>
+            <tr>
+              <td><code>intent.target_duration_minutes</code></td>
+              <td>integer</td>
+              <td><span class="field-required">required</span></td>
+              <td>Desired session length in minutes</td>
+            </tr>
+            <tr>
+              <td><code>intent.weights</code></td>
+              <td>object</td>
+              <td><span class="field-required">required</span></td>
+              <td>Category weight distribution (e.g., fitness: 0.25, humor: 0.20)</td>
+            </tr>
+            <tr>
+              <td><code>intent.filters</code></td>
+              <td>object</td>
+              <td><span class="field-required">required</span></td>
+              <td>Hard exclusion filters for harmful content, energy bounds, language</td>
+            </tr>
+            <tr>
+              <td><code>disclosure_level</code></td>
+              <td>enum</td>
+              <td><span class="field-required">required</span></td>
+              <td><code>minimal</code>, <code>standard</code>, or <code>full</code></td>
+            </tr>
+            <tr>
+              <td><code>telemetry_opt_in</code></td>
+              <td>boolean</td>
+              <td><span class="field-required">required</span></td>
+              <td>Whether to share engagement telemetry</td>
+            </tr>
+            <tr>
+              <td><code>intent.context</code></td>
+              <td>object</td>
+              <td><span class="field-optional">optional</span></td>
+              <td>Time of day, session count, state token for multi-round exchanges</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Disclosure Levels</h4>
+        <table class="field-table">
+          <thead>
+            <tr><th>Level</th><th>What the provider sees</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>minimal</code></td><td>Weights and filters only. No behavioral history.</td></tr>
+            <tr><td><code>standard</code></td><td>Weights, filters, plus recent anonymized session summaries.</td></tr>
+            <tr><td><code>full</code></td><td>Weights, filters, and full behavioral profile. Provider can hyper-personalize.</td></tr>
+          </tbody>
+        </table>
+
+        <p class="code-label">Example Intent</p>
+        <pre><code>{
+  "sep_version": "0.1.0",
+  "consumer_id": "anon-user-42",
+  "intent": {
+    "session_type": "composed",
+    "target_duration_minutes": 15,
+    "weights": {
+      "fitness": 0.25,
+      "humor": 0.20,
+      "skill_building": 0.20,
+      "motivation": 0.15,
+      "craft": 0.10,
+      "music": 0.10
+    },
+    "filters": {
+      "exclude_rage_bait": true,
+      "exclude_humiliation": true,
+      "exclude_shock_content": true,
+      "min_energy_level": 0.3,
+      "max_cognitive_load": 0.7,
+      "language": ["en"]
+    },
+    "context": {
+      "time_of_day": "morning",
+      "session_number_today": 1,
+      "state_token": null
+    }
+  },
+  "disclosure_level": "minimal",
+  "telemetry_opt_in": false
+}</code></pre>
+      </div>
+
+      <!-- Provider Response -->
+      <div class="schema-section">
+        <h3>Provider Response</h3>
+        <p>The provider's response to a consumer intent. Supports payloads, errors, and redirects.</p>
+
+        <table class="field-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Status</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sep_version</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Protocol version</td>
+            </tr>
+            <tr>
+              <td><code>provider_id</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Provider identifier</td>
+            </tr>
+            <tr>
+              <td><code>response_type</code></td>
+              <td>enum</td>
+              <td><span class="field-required">required</span></td>
+              <td><code>payload</code>, <code>error</code>, or <code>redirect</code></td>
+            </tr>
+            <tr>
+              <td><code>payload.items</code></td>
+              <td>array</td>
+              <td><span class="field-required">conditional</span></td>
+              <td>Array of enrichment envelopes, ordered by relevance</td>
+            </tr>
+            <tr>
+              <td><code>payload.confidence</code></td>
+              <td>0&ndash;1</td>
+              <td><span class="field-required">conditional</span></td>
+              <td>Overall confidence that this payload satisfies the intent</td>
+            </tr>
+            <tr>
+              <td><code>payload.suggested_arc</code></td>
+              <td>array</td>
+              <td><span class="field-optional">optional</span></td>
+              <td>Suggested session arc for optimal pacing</td>
+            </tr>
+            <tr>
+              <td><code>payload.state_token</code></td>
+              <td>string</td>
+              <td><span class="field-optional">optional</span></td>
+              <td>Opaque token for stateful multi-round exchanges</td>
+            </tr>
+            <tr>
+              <td><code>capabilities</code></td>
+              <td>object</td>
+              <td><span class="field-optional">optional</span></td>
+              <td>Stateful support, full index browse, telemetry exchange, max payload size</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Provider Manifest -->
+      <div class="schema-section">
+        <h3>Provider Manifest</h3>
+        <p>A provider's self-declaration document, published at a well-known endpoint for discovery and negotiation.</p>
+
+        <table class="field-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Status</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>provider_id</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Unique provider identifier</td>
+            </tr>
+            <tr>
+              <td><code>provider_name</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Human-readable provider name</td>
+            </tr>
+            <tr>
+              <td><code>endpoint</code></td>
+              <td>uri</td>
+              <td><span class="field-required">required</span></td>
+              <td>Base URL of the SEP API endpoint</td>
+            </tr>
+            <tr>
+              <td><code>supported_models</code></td>
+              <td>array</td>
+              <td><span class="field-required">required</span></td>
+              <td>Exchange models: <code>negotiated</code>, <code>curated_payload</code>, <code>full_index_browse</code></td>
+            </tr>
+            <tr>
+              <td><code>supported_content_types</code></td>
+              <td>array</td>
+              <td><span class="field-required">required</span></td>
+              <td>Content types: <code>video</code>, <code>podcast</code>, <code>music</code>, <code>article</code></td>
+            </tr>
+            <tr>
+              <td><code>guardrails</code></td>
+              <td>object</td>
+              <td><span class="field-optional">optional</span></td>
+              <td>Published guardrail policy: URL, version, transparency flag</td>
+            </tr>
+            <tr>
+              <td><code>enrichment_schema_version</code></td>
+              <td>string</td>
+              <td><span class="field-required">required</span></td>
+              <td>Enrichment schema version used by this provider</td>
+            </tr>
+            <tr>
+              <td><code>max_payload_size</code></td>
+              <td>integer</td>
+              <td><span class="field-required">required</span></td>
+              <td>Maximum enrichment envelopes per response</td>
+            </tr>
+            <tr>
+              <td><code>rate_limit</code></td>
+              <td>object</td>
+              <td><span class="field-optional">optional</span></td>
+              <td>Requests per minute and daily cap</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Telemetry -->
+      <div class="schema-section">
+        <h3>Telemetry</h3>
+        <p>Optional, opt-in engagement telemetry shared after a session. Creates a voluntary value exchange.</p>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Session-Level</h4>
+        <table class="field-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>session_id</code></td><td>uuid</td><td>Unique session identifier</td></tr>
+            <tr><td><code>session_completed</code></td><td>boolean</td><td>Whether the full session arc was completed</td></tr>
+            <tr><td><code>session_satisfaction</code></td><td>0&ndash;1</td><td>Consumer satisfaction score</td></tr>
+          </tbody>
+        </table>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Per-Item Signals</h4>
+        <table class="field-table">
+          <thead>
+            <tr><th>Signal</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>viewed</code></td><td>boolean</td><td>Whether the consumer started playback</td></tr>
+            <tr><td><code>view_duration_seconds</code></td><td>number</td><td>Seconds of content consumed</td></tr>
+            <tr><td><code>completed</code></td><td>boolean</td><td>Consumed to completion</td></tr>
+            <tr><td><code>liked</code></td><td>boolean</td><td>Explicitly liked/favorited</td></tr>
+            <tr><td><code>skipped_at_seconds</code></td><td>number</td><td>Timestamp where skipped (if applicable)</td></tr>
+            <tr><td><code>rewatched</code></td><td>boolean</td><td>Replayed during session</td></tr>
+            <tr><td><code>paused</code></td><td>boolean</td><td>Paused during playback</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Privacy Architecture -->
+      <div class="schema-section">
+        <h3>Privacy Architecture</h3>
+        <p>State lives primarily on the consumer side. The provider sees only what the consumer chooses to share.</p>
+
+        <div class="principles-grid" style="margin-top: 1rem;">
+          <div class="principle">
+            <h3>Disclosure Levels</h3>
+            <p>Consumers control what providers see. Three granularity levels from anonymous weights to full behavioral profiles.</p>
+          </div>
+          <div class="principle">
+            <h3>Opaque State Tokens</h3>
+            <p>Providers store session continuity tokens, not behavioral profiles. State is functional, not surveillance.</p>
+          </div>
+          <div class="principle">
+            <h3>Voluntary Telemetry</h3>
+            <p>Engagement data is aggregated before sending. Always opt-in. Creates a transparent value exchange.</p>
+          </div>
+          <div class="principle">
+            <h3>Multi-Provider Queries</h3>
+            <p>Consumers can query multiple providers with different disclosure levels. No provider sees the full picture.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transport Layer -->
+      <div class="schema-section">
+        <h3>Transport Layer</h3>
+        <p>SEP is transport-agnostic by design. It mandates what messages contain and how they&rsquo;re structured &mdash; not how they travel. The transport layer is pluggable.</p>
+
+        <div class="table-responsive">
+          <table class="field-table">
+            <thead>
+              <tr><th>Transport</th><th>Strengths</th><th>Use Case</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>HTTP/HTTPS</strong></td>
+                <td>Universal, familiar, well-tooled</td>
+                <td>Primary transport, API-based exchanges</td>
+              </tr>
+              <tr>
+                <td><strong>Nostr relays</strong></td>
+                <td>Censorship-resistant, decentralized, zero-cost infrastructure</td>
+                <td>Real-time event distribution, backup transport</td>
+              </tr>
+              <tr>
+                <td><strong>WebSocket</strong></td>
+                <td>Low-latency, bidirectional</td>
+                <td>Live session updates, streaming metadata</td>
+              </tr>
+              <tr>
+                <td><strong>Future protocols</strong></td>
+                <td>TBD</td>
+                <td>Pluggable by design</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Enrichment Envelopes as Nostr Events</h4>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">A SEP enrichment envelope can be published as a signed Nostr event (using a dedicated NIP kind such as 30078). This means:</p>
+
+        <div class="principles-grid" style="margin-top: 1rem;">
+          <div class="principle">
+            <h3>Zero-Cost Distribution</h3>
+            <p>Relays propagate events for free. No CDN costs for metadata delivery. Enrichment data floats across the relay network.</p>
+          </div>
+          <div class="principle">
+            <h3>Built-In Discovery</h3>
+            <p>Any Nostr client can subscribe to enrichment events by category, creator pubkey, or content type. Consumer agents gain another discovery channel.</p>
+          </div>
+          <div class="principle">
+            <h3>Censorship Resistance</h3>
+            <p>If a relay drops your events, dozens of others carry them. No single point of failure for metadata distribution.</p>
+          </div>
+        </div>
+
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1.25rem;">HTTP remains the primary transport for rich provider-consumer sessions and negotiated exchanges. Nostr relays serve as the ambient distribution layer &mdash; complementary, not competing.</p>
+      </div>
+
+      <!-- Versioning -->
+      <div class="schema-section">
+        <h3>Versioning</h3>
+        <p>SEP uses dual versioning: semantic versioning for the protocol (<code>0.1.0</code>, <code>0.2.0</code>) and date-based snapshots for schema releases (<code>spec/2026-02-28/</code>). Enrichment schemas are versioned independently from the protocol.</p>
+
+        <h4 style="font-size: 1rem; margin: 1.25rem 0 0.75rem;">Roadmap</h4>
+        <table class="field-table">
+          <thead>
+            <tr><th>Version</th><th>Focus</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>v0.1.0</code></td><td>Foundation &mdash; Enrichment, Intent, Response, Manifest, Telemetry</td><td><span class="card-status active" style="margin: 0;">Current</span></td></tr>
+            <tr><td><code>v0.2.0</code></td><td>Authentication, Access Tiers, Monetization, Stream Types</td><td><span class="card-status planned" style="margin: 0;">Draft</span></td></tr>
+            <tr><td><code>v0.3.0</code></td><td>Peer Exchange, Session Sharing, Taste Profiles</td><td><span class="card-status concept" style="margin: 0;">Design</span></td></tr>
+            <tr><td><code>v0.4.0</code></td><td>Decentralized Identity, Attestation Framework</td><td><span class="card-status concept" style="margin: 0;">Future</span></td></tr>
+            <tr><td><code>v0.5.0</code></td><td>Stream Multiplexing, Chat, Co-Watching</td><td><span class="card-status concept" style="margin: 0;">Future</span></td></tr>
+            <tr><td><code>v1.0.0</code></td><td>Stable Release, Conformance Tests, Formal Spec</td><td><span class="card-status concept" style="margin: 0;">Target</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-alt" style="text-align: center;">
+    <div class="section-inner">
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Build on SEP</h2>
+      <p style="color: var(--text-secondary); max-width: 550px; margin: 0 auto 1.5rem;">SEP is an open protocol. Build a provider, build a consumer, build a shell. The spec is free and the reference implementations are open-source.</p>
+      <div class="hero-cta">
+        <a href="https://github.com/sovereign-streams/web4/tree/main/spec/2026-02-28" class="btn btn-primary">JSON Schemas</a>
+        <a href="https://github.com/sovereign-streams/good-vibes" class="btn btn-secondary" style="color: var(--text-primary); border-color: var(--border);">Reference Implementation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">Sovereign Streams</div>
+      <p>Web 4.0 &bull; Stream Exchange Protocol (SEP) v0.1.0</p>
+      <ul class="footer-links">
+        <li><a href="https://github.com/sovereign-streams/web4">web4</a></li>
+        <li><a href="https://github.com/sovereign-streams/good-vibes">Good Vibes</a></li>
+        <li><a href="https://github.com/sovereign-streams/web4/blob/main/MANIFESTO.md">Manifesto</a></li>
+        <li><a href="https://github.com/sovereign-streams/web4/blob/main/LICENSE">MIT License</a></li>
+      </ul>
+      <p class="footer-quote">"Own your scroll. Own your mind. Own your future."</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

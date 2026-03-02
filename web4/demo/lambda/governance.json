@@ -1,0 +1,103 @@
+{
+  "governance_version": "0.1.0",
+  "provider_id": "sovereign-news",
+  "provider_name": "Sovereign News",
+  "provider_description": "A news aggregator that respects your attention. No clickbait. No infinite scroll. News sessions with beginnings and endings.",
+
+  "identity": {
+    "provider_type": "news_aggregation",
+    "ethos": "Informed citizens, not addicted users. Transparency over engagement. Signal over noise.",
+    "content_policy": "No sensationalism. No manipulation. Headlines reflect content accurately."
+  },
+
+  "capabilities": {
+    "content_types": ["article", "headline", "summary"],
+    "categories": ["technology", "science", "world", "business", "health", "environment"],
+    "authentication": {
+      "required": false,
+      "free_tier_available": true
+    }
+  },
+
+  "experience_guidance": {
+    "suggested_shell": {
+      "type": "session_based",
+      "description": "News consumed in focused reading sessions, not infinite feeds",
+      "default_session_length_minutes": 10,
+      "max_articles_per_session": 12,
+      "session_arc_template": "briefing → deep-reads → wrap-up"
+    },
+    "core_features": [
+      {
+        "id": "news_briefing",
+        "description": "Top headlines organized by category with summaries",
+        "priority": "required",
+        "guidance": "Show 8-12 headlines with 1-2 sentence summaries. Group by category. Most important stories first within each category. No ranking by engagement metrics."
+      },
+      {
+        "id": "reading_session",
+        "description": "Focused article reading with session progress",
+        "priority": "required",
+        "guidance": "When user clicks a headline, show full article in a clean reading view. Include session progress indicator (e.g., 3 of 10 articles read). Provide 'next article' suggestion based on category balance, not clickbait."
+      },
+      {
+        "id": "category_controls",
+        "description": "User controls which categories appear and their weight",
+        "priority": "recommended",
+        "guidance": "Simple toggles or sliders for each category. Changes take effect immediately. No dark patterns to re-enable disabled categories."
+      },
+      {
+        "id": "session_summary",
+        "description": "End-of-session recap",
+        "priority": "recommended",
+        "guidance": "When session ends (time or article limit), show brief summary of what was read. No guilt-tripping to continue. Clean exit."
+      }
+    ],
+    "design_principles": [
+      "No infinite scroll — session has a defined end",
+      "No clickbait headlines — summaries are accurate",
+      "No engagement metrics visible (no view counts, no trending badges)",
+      "No autoplay or auto-advance",
+      "Reading time estimates on every article",
+      "Clean typography optimized for reading, not scanning",
+      "Dark mode support based on system preference",
+      "Mobile-first responsive layout"
+    ],
+    "forbidden_patterns": [
+      "Infinite scroll or endless feed",
+      "Breaking news alerts or urgency manipulation",
+      "Social sharing prompts that interrupt reading",
+      "Ad-like content mixed with news",
+      "Notification permission requests",
+      "Email signup modals"
+    ]
+  },
+
+  "data_contracts": {
+    "consumer_data_policy": "No data leaves the consumer's device. Reading history stored locally only.",
+    "source_transparency": "All articles include original source attribution and publication date.",
+    "enrichment_transparency": "Category assignments and importance rankings are visible to the consumer."
+  },
+
+  "sample_data": {
+    "note": "In production, this would be a live SEP endpoint. For this demo, the provider agent generates representative content.",
+    "categories_with_sample_headlines": {
+      "technology": [
+        {"headline": "Open-Source AI Models Close Gap with Proprietary Systems", "source": "Ars Technica", "reading_time_min": 6},
+        {"headline": "EU Digital Markets Act Forces Interoperability in Messaging Apps", "source": "The Verge", "reading_time_min": 4}
+      ],
+      "science": [
+        {"headline": "Webb Telescope Discovers New Class of Exoplanet Atmospheres", "source": "Nature", "reading_time_min": 8},
+        {"headline": "CRISPR Gene Therapy Shows Promise for Sickle Cell Disease", "source": "Science", "reading_time_min": 5}
+      ],
+      "world": [
+        {"headline": "Global Summit on Ocean Plastic Treaty Reaches Framework Agreement", "source": "Reuters", "reading_time_min": 5},
+        {"headline": "Renewable Energy Investment Surpasses Fossil Fuels Worldwide", "source": "Bloomberg", "reading_time_min": 4}
+      ],
+      "environment": [
+        {"headline": "Arctic Ice Recovery Exceeds Climate Models for Third Consecutive Year", "source": "Guardian", "reading_time_min": 7},
+        {"headline": "Urban Rewilding Projects Transform Former Industrial Zones", "source": "BBC", "reading_time_min": 5}
+      ]
+    }
+  }
+}
