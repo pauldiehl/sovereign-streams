@@ -162,7 +162,7 @@ Generate a complete self-contained HTML news reading experience. Include all CSS
         // Strip any markdown code fences if Claude wrapped it
         const cleanHtml = html.replace(/^```html?\n?/i, '').replace(/\n?```$/i, '').trim();
         
-        return respond(200, { html: cleanHtml, generated_at: new Date().toISOString(), model: 'claude-sonnet-4' }, origin);
+        return respond(200, { html: cleanHtml, generated_at: new Date().toISOString(), model: 'claude-haiku-4.5' }, origin);
       }
 
       if (action === 'interact') {
