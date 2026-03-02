@@ -6,6 +6,8 @@
 
 ## What's Here
 
+- **[AGENTIC-RENDERING.md](./AGENTIC-RENDERING.md)** — **Agentic Rendering**: the architecture where apps don't exist until you need them. Governance protocols + agent negotiation + on-the-fly experience generation. The core paradigm of Web 4.0.
+- **[Live Demo](https://pauldiehl.github.io/sovereign-streams/web4/demo/index.html)** — Watch an AI agent build an entire news app in your browser from a governance protocol.
 - **[MANIFESTO.md](./MANIFESTO.md)** — The full Web 4.0 vision: why Web3 failed, what agents change, the architecture, use cases, and transition strategy.
 - **[spec/](./spec/)** — The **Stream Exchange Protocol (SEP)** — an open protocol defining how Stream Providers and Stream Consumers exchange metadata-driven content through structured negotiation.
 

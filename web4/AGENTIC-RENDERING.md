@@ -1,13 +1,15 @@
-# The Agent-as-Download: Apps That Don't Exist Until You Need Them
+# Agentic Rendering: Apps That Don't Exist Until You Need Them
 
 **A Web 4.0 Architecture Paper**
 **Author:** Paul (Milliprime / 1KH) & Claude (Anthropic)
 **Date:** March 2, 2026
-**Version:** 0.1.0-draft
+**Version:** 0.2.0
 
 ---
 
 > "The download button doesn't install an app. It activates an agent. The app is whatever happens next."
+
+**Agentic Rendering** is the paradigm. The **Agent-as-Download** is the mechanism. In this architecture, no frontend is pre-built, shipped, or deployed. A governance protocol declares what the experience *should be*. Consumer and provider agents negotiate the terms. The consumer's agent renders the experience locally — on the fly, for this user, on this device, right now.
 
 ---
 
