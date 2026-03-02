@@ -11,6 +11,8 @@
 
 **Agentic Rendering** is the paradigm. The **Agent-as-Download** is the mechanism. In this architecture, no frontend is pre-built, shipped, or deployed. A governance protocol declares what the experience *should be*. Consumer and provider agents negotiate the terms. The consumer's agent renders the experience locally — on the fly, for this user, on this device, right now.
 
+**Where this fits:** Agentic Rendering is a subset of [Agentic Execution](./AGENTIC-EXECUTION.md) — the broader framework where agents fulfill human intent through protocol negotiation. Most agentic execution happens invisibly in the background with no UI at all. Agentic Rendering applies specifically when the experience **requires visual interaction** — streaming media, browsing catalogs, configuring preferences. For media applications like Good Vibes, Itzda, and Stanzas, rendering is the primary mode. For services, commerce, and enrollment, execution handles things without a screen. Both use the same governance protocols, the same agent architecture, and the same trust model.
+
 ---
 
 ## I. The End of the App
@@ -575,8 +577,11 @@ What remains is the hard work: thinking clearly about what the experience should
 
 ---
 
-## Sources and Prior Art
+## Sources and Related Documents
 
+- [Agentic Execution](./AGENTIC-EXECUTION.md) — The broader execution framework (rendering is a subset)
+- [Agent Exchange](./AGENT-EXCHANGE.md) — How agents discover each other
+- [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — Growth strategy and timelines
 - [Service Workers API (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
 - [Progressive Web Apps (web.dev)](https://web.dev/progressive-web-apps/)
 - [Web 4.0 Manifesto](./MANIFESTO.md)

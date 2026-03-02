@@ -395,6 +395,63 @@ Banks are great for holding large reserves and providing FDIC insurance. For the
 
 ---
 
+## VIII. The Agent Exchange Economy
+
+### Agent Discovery as an Economic Layer
+
+The economics described above — x402 micropayments, stablecoin settlement, multi-rail payment stacks — handle value transfer between participants who already know each other. But how do agents FIND each other in the first place? Discovery is its own economic layer.
+
+The **Agent Exchange** (fully described in [AGENT-EXCHANGE.md](./AGENT-EXCHANGE.md)) is a decentralized marketplace where provider agents publish offers and consumer agents evaluate them. The economics follow the Google paid search model — adapted for agents.
+
+### CPA: Cost Per Agent Connection
+
+Providers pay for qualified agent connections. Not impressions. Not clicks. Connections — where a consumer agent initiates a governance protocol handshake based on genuine alignment with its human's preferences.
+
+```
+Provider stakes tokens → publishes offer to exchange
+Consumer agent evaluates offer → filters by preference alignment
+Match? → Agent connects → Provider pays CPA ($0.01-0.05)
+No match? → Agent ignores → Provider pays nothing
+```
+
+This is economically efficient because:
+- Providers only pay when a genuinely interested consumer's agent connects
+- Consumer agents have no incentive to "click" on irrelevant offers (they serve their human, not ad networks)
+- The exchange extracts no platform tax — it charges a small processing fee (0.5-2%)
+
+### On-Chain Trust as Economic Signal
+
+Transaction history on-chain serves as both reputation AND economic signal:
+
+- **High volume + high satisfaction** = established provider. Can offer lower CPAs because agents trust them.
+- **Low volume + no history** = new provider. Must offer higher CPAs (or direct funding) to attract first agents.
+- **High volume + declining satisfaction** = deteriorating provider. Staked tokens at risk of forfeiture.
+
+The market self-corrects. Trust-rich providers spend less on acquisition. Trust-poor providers spend more. Quality is rewarded economically, not just reputationally.
+
+### Token Utility (Not Speculation)
+
+The exchange uses a utility token for:
+
+1. **Staking** — providers commit tokens when publishing offers (forfeited if quality drops below threshold)
+2. **CPA payments** — providers pay in tokens for qualified connections
+3. **Governance** — token holders vote on protocol changes, fee structures, dispute resolution
+
+The token's value is tied to exchange volume — not hype, not speculation, not market manipulation. It's fuel for the marketplace, not an investment vehicle.
+
+### Agent Economy Flywheel
+
+```
+More agents → more offers → better matching → more transactions
+    → more on-chain trust data → better evaluation → more agents join
+    → exchange token gains utility value → attracts more providers
+    → ...critical mass → self-sustaining growth
+```
+
+The agent economy doesn't need to be huge to work. It needs to cross the threshold where agent-initiated discovery exceeds human-initiated discovery. After that point, growth compounds at machine speed.
+
+---
+
 ## Sources
 
 - [Coinbase and Cloudflare x402 Foundation](https://www.coinbase.com/blog/coinbase-and-cloudflare-will-launch-x402-foundation)

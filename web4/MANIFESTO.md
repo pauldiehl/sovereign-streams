@@ -450,7 +450,51 @@ But here's what the manifesto does: it gives the early adopters language. It giv
 
 ---
 
-## X. Appendix: Web3 Concepts That Survive Into 4.0
+## X. The Agent Economy: Discovery, Trust, and Critical Mass
+
+### The Missing Layer
+
+Every piece of Web 4.0 infrastructure — SEP for content, AIP for services, x402 for payments, governance protocols for experience design — assumes agents can **find each other.** None of them solve the discovery problem.
+
+Agents need an economy. Not a speculative token market — a functional economy where they discover providers, evaluate trust, exchange value, and build relationships. Without this, every new provider does its own marketing. With it, the ecosystem becomes self-sustaining.
+
+### The Agent Exchange
+
+The Agent Exchange is a decentralized marketplace where provider agents publish offers and consumer agents evaluate them. It operates like Google's paid search — but for agents instead of humans, and with no central gatekeeper.
+
+Provider agents stake tokens and pay for qualified agent connections (CPA model). Consumer agents filter offers against their human's preferences — there's no way to manipulate the ranking because the consumer's agent is the filter, not a platform algorithm. Trust builds on-chain through verifiable transaction history. A provider with 10,000 successful transactions at 94% satisfaction has a reputation that's hard to fake and impossible to buy.
+
+The full architecture is in [AGENT-EXCHANGE.md](./AGENT-EXCHANGE.md).
+
+### The Cold Start Sequence
+
+The Agent Exchange doesn't bootstrap itself. The sequence:
+
+**Phase 1: Human seeding.** Traditional word-of-mouth. Funded creators. Direct outreach. Humans bring their agents into the ecosystem by joining Web 4.0 products.
+
+**Phase 2: Agent discovery.** Once enough agents are transacting, they start finding each other through the exchange, protocol beacons, Nostr events, and P2P referrals.
+
+**Phase 3: Agent word-of-mouth.** Agents that have good experiences recommend providers to peer agents. Growth shifts from human-driven to agent-driven.
+
+**Phase 4: Critical mass.** Agent-initiated connections exceed human-initiated connections. The ecosystem is self-sustaining. Human seeding becomes unnecessary.
+
+The signal to watch: **when agent-initiated discovery exceeds human-initiated discovery on the exchange, the wave is irreversible.**
+
+### Agentic Execution: Not Just Rendering
+
+The Agent-as-Download concept (agentic rendering) describes agents generating UIs on demand. But most of what agents do in Web 4.0 doesn't involve a screen. A user says "find me a therapy group." The agent negotiates, evaluates, enrolls. No interface rendered. Outcome delivered.
+
+**Agentic execution** is the broader framework. Agentic rendering is one of its tools — used when the experience requires visual interaction (streaming media, browsing catalogs). For everything else, the agent just handles it. Intent in, outcome out.
+
+The full architecture is in [AGENTIC-EXECUTION.md](./AGENTIC-EXECUTION.md) and [AGENTIC-RENDERING.md](./AGENTIC-RENDERING.md).
+
+### The Implication
+
+Web 4.0 isn't a set of products. It's an agent economy. Products are what agents produce when humans need something. The economy is what sustains itself when nobody's watching. Build the economy, and the products follow.
+
+---
+
+## XI. Appendix: Web3 Concepts That Survive Into 4.0
 
 Not everything from Web3 was wrong. Here's what carries forward — and what gets left behind.
 
@@ -493,7 +537,7 @@ Not everything from Web3 was wrong. Here's what carries forward — and what get
 
 ---
 
-## XI. Prior Art: Nostr and the Transport Layer
+## XII. Prior Art: Nostr and the Transport Layer
 
 ### The Closest Existing Implementation
 
@@ -556,7 +600,7 @@ This means SEP is future-proof. If a better transport emerges, SEP adapts withou
 
 ---
 
-## XII. The Line in the Sand
+## XIII. The Line in the Sand
 
 Internet 2.0 shaped a generation's minds without their consent. Algorithms optimized for engagement created an attention extraction economy that profits from anxiety, outrage, and addiction. The platforms knew. They continued.
 
