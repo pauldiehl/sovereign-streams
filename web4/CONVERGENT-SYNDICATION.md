@@ -190,7 +190,47 @@ GIVE → ENROLL → BUILD → TRANSACT → TRUST GROWS → GIVE MORE
 
 ---
 
-## V. Convergent Syndication vs. Traditional Growth
+## V. The Five Layers of Convergent Syndication
+
+**v0.2.0 addition:** Convergent syndication isn't just for content and people. It's a ladder — each layer broader than the last, culminating in agents syndicating entire systems to the economy.
+
+```
+LAYER 5: AGENTS post systems to the economy
+         Saunter AI generates Books of Life for systems.
+         Agents discover, compose, and syndicate complete
+         platforms without human involvement.
+         This is the FINAL LAYER — machine-speed scaling.
+              │
+LAYER 4: MILLIPRIMES post platforms to the economy
+         Coalition members give away complete platforms.
+         Each platform = governance protocols + enrichment
+         pipeline + payment rails + user acquisition playbook.
+              │
+LAYER 3: ENGINEERS post services to platforms
+         Build tools, APIs, greenspace components that
+         platforms consume. Each service enriches the
+         ecosystem's capability.
+              │
+LAYER 2: PARTNERS post influencers to platforms
+         1 partner = 20 influencers = 1,000+ users.
+         Partner deals are the multiplier that turns
+         individual enrollment into batch enrollment.
+              │
+LAYER 1: INFLUENCERS post content to platforms
+         Creators produce content and distribute through
+         the network. This is where revenue starts and
+         where most humans first encounter Web 4.0.
+```
+
+**The key insight:** Convergent syndication is REVERSE SYNDICATION FOR THE CONSUMER and FORWARD SYNDICATION FOR THE PRODUCER. And we are all middlemen entities if we choose to be. This is a design pattern inherent to Web 4.0.
+
+At the bottom of the ladder, humans do the work. At the top, agents do the work. The transition from Layer 1 to Layer 5 IS the agentic progression: Engineering → Rendering → Execution. By the time Layer 5 is active, the Coalition is scaling at machine speed.
+
+See [Saunter AI](./SAUNTER-AI.md) for how Layer 5 works in practice.
+
+---
+
+## VI. Convergent Syndication vs. Traditional Growth
 
 | Dimension | Traditional Growth | Convergent Syndication |
 |-----------|-------------------|----------------------|
@@ -204,7 +244,7 @@ GIVE → ENROLL → BUILD → TRANSACT → TRUST GROWS → GIVE MORE
 
 ---
 
-## VI. Metrics
+## VII. Metrics
 
 ### Leading Indicators
 - **Enrollment rate:** How many new coalition members per month?
@@ -230,3 +270,5 @@ GIVE → ENROLL → BUILD → TRANSACT → TRUST GROWS → GIVE MORE
 - [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — How syndication feeds the growth plan
 - [AEO Strategy](./AEO-STRATEGY.md) — How agents discover syndicated content
 - [Agent Communication](./AGENT-COMMUNICATION.md) — How enrolled agents find each other
+- [Saunter AI](./SAUNTER-AI.md) — Layer 5: Agentic reverse syndication of systems
+- [First App Blueprint](./FIRST-APP-BLUEPRINT.md) — Critical infrastructure for shipping
