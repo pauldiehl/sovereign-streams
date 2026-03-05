@@ -230,7 +230,49 @@ See [Saunter AI](./SAUNTER-AI.md) for how Layer 5 works in practice.
 
 ---
 
-## VI. Convergent Syndication vs. Traditional Growth
+## VI. The Haves & Needs Board: Convergent Syndication Made Physical
+
+**v0.3.0 addition:** The simplest mental model for convergent syndication comes from a classroom exercise.
+
+### The Exercise
+
+Two boards. One says HAVES. One says NEEDS. Everyone writes sticky notes:
+
+**HAVES board:** "I have payment gateway experience." "I have VC connections." "I have 10 years of protocol design." "I have a fully deployed streaming platform."
+
+**NEEDS board:** "I need an agent engineer." "I need help with x402." "I need someone to review my governance protocol." "I need introductions to fintech investors."
+
+Everyone steps back. The patterns emerge. "Oh wow — my solution fits your problem." Connections form organically. No coordinator needed. No central authority matching people. Just: transparent needs, transparent haves, and humans (or agents) finding the overlaps.
+
+### Digitized and Automated
+
+In Web 4.0, each entity publishes `/.well-known/haves.json` and `/.well-known/needs.json` — their permanent sticky notes. Agents read these across the network and identify matches automatically.
+
+See [PROTOCOL-EXPLORER.md](./PROTOCOL-EXPLORER.md) for the full specification.
+
+This IS convergent syndication at the protocol level:
+- **Reverse syndication:** Your agent scans needs across the network, looking for people you can help
+- **Forward syndication:** Your agent broadcasts your haves, making you discoverable to people who need you
+- **Match:** When a have meets a need, agents arrange a handshake. Collaboration begins.
+- **Bidirectional matches** are the gold: "You have what I need AND I have what you need." These become the strongest trust bonds because both parties benefit simultaneously.
+
+### The Directory as Syndication Output
+
+As you discover entities through haves/needs matching, you catalog them in your `/.well-known/network.json`. You're building your own directory of the Web 4.0 economy — your version, your trust assessments, your notes.
+
+Other agents can read your directory. If they trust you, your directory becomes their discovery shortcut. You become a syndication node: consuming haves/needs from the network (reverse) and publishing your curated directory for others (forward).
+
+Some entities will specialize as directory aggregators — they'll catalog thousands of entities, evaluate quality, and publish comprehensive directories. Think of them as the search engines of Web 4.0, but trust-filtered and decentralized. You only follow their directory if you trust them.
+
+### Convergent Syndication as a Service
+
+The Protocol Explorer toolkit makes this a service. A new entity arrives → the toolkit helps them define their haves and needs → deploys their protocols → connects them to the matching engine → they start receiving matches immediately.
+
+For Paul's friend who runs a payments company: instead of receiving 20 documents, he receives a toolkit that says "Tell me your haves and needs. I'll find your matches." His agent does the rest. That's the magic he was asking for.
+
+---
+
+## VII. Convergent Syndication vs. Traditional Growth
 
 | Dimension | Traditional Growth | Convergent Syndication |
 |-----------|-------------------|----------------------|
@@ -244,7 +286,7 @@ See [Saunter AI](./SAUNTER-AI.md) for how Layer 5 works in practice.
 
 ---
 
-## VII. Metrics
+## VIII. Metrics
 
 ### Leading Indicators
 - **Enrollment rate:** How many new coalition members per month?

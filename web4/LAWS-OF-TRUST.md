@@ -7,7 +7,7 @@
 
 ---
 
-> "They all really are principles of love. I'm just not trying to position myself too much like a 'sap.' Say 'Laws of Love' and honestly, it's its own form of power, ironically."
+> "These are principles of love — reframed as economics. Not because love needs rebranding, but because the world listens to incentives before it listens to wisdom. The trust economy makes love rational. That's the trick."
 
 ---
 
@@ -48,7 +48,7 @@ The power player dims their light to avoid threatening the ego above them. The t
 
 Letting others shine isn't servility. It's the recognition that in a trust economy, your value isn't measured by how far above others you stand — it's measured by how many others you've lifted. The Milliprime who gives away complete systems to coalition members isn't diminished by their success. They're amplified by it.
 
-**The historical lesson:** Every great mentor is remembered not for outshining anyone, but for the people they helped shine. The master who fears being outshone creates a court of diminished people. The leader who celebrates being outshone creates a coalition of giants.
+**The historical lesson:** Andy Grove at Intel celebrated when his engineers surpassed his technical knowledge — and built a dynasty. Warren Buffett's Berkshire letters are famous for crediting his managers, not himself — and the managers stay for decades. Contrast with Steve Ballmer at Microsoft, who created a culture where shining too bright was career suicide, and Microsoft lost a decade of innovation. The leaders who let others shine create coalitions of giants. The ones who don't create courts of diminished people.
 
 **In Web 4.0:** The coalition member who helps another member build something better than their own product hasn't lost — they've gained trust equity that compounds forever. Their "competitor's" success IS their success, because it strengthens the trust network they're both part of.
 
@@ -65,7 +65,7 @@ The power player sees everyone as a tool — friends as liabilities, enemies as 
 
 This is the hardest law for rational people to accept. It sounds like a recipe for exploitation. And sometimes it will be. Some people you cross oceans for will not cross a puddle for you. That's fine. The tradeoff is explicit: you chose to give. The loss is known and accepted. Compare this to the power player, whose tradeoff is implicit — they "win" every transaction but slowly lose the capacity for genuine connection, discovering too late that their strategic alliances evaporate the moment they're no longer useful.
 
-**The historical lesson:** The most durable institutions were built by people who gave disproportionately. Open-source software (billions in value created by volunteers), Wikipedia (the world's knowledge given for free), mutual aid societies (communities surviving impossible conditions through radical giving). Every time someone crosses an ocean for others, a few of those others become ocean-crossers too. The network grows.
+**The historical lesson:** Linus Torvalds gave away Linux — crossed an ocean for strangers who owed him nothing. Today it runs 96% of the world's servers, all major cloud infrastructure, and every Android device on Earth. He could have sold it. He gave it. Craig Newmark gave away classified ads with Craigslist, destroying newspaper revenue models while asking nothing in return — and fundamentally changed how humans find apartments, jobs, and each other. Jonas Salk refused to patent the polio vaccine. "Could you patent the sun?" he asked. He crossed an ocean for every child on Earth. A few of those recipients become ocean-crossers themselves. The network grows.
 
 **In Web 4.0:** Radical generosity — giving away complete systems, platforms, playbooks — is crossing oceans. Most recipients will use your gifts and build their own thing without looking back. A few will become Milliprimes. Those few are worth every ocean.
 
@@ -114,7 +114,7 @@ The power player treats reputation as an asset to be managed, controlled, and we
 
 This is liberating. The energy spent guarding reputation — spinning narratives, managing perceptions, attacking critics — is enormous. It's an entire industry (PR, reputation management, crisis communications). The trust builder redirects that energy toward actually doing good work. If the work is good, the reputation takes care of itself. If someone misunderstands, time corrects it. If someone lies about you, the people who know you already know the truth.
 
-**The historical lesson:** The reputations that endure aren't the ones that were guarded. They're the ones that were earned through consistent action over time. No amount of reputation management saved Enron. No amount of slander diminished people whose actions spoke clearly over decades.
+**The historical lesson:** The reputations that endure aren't the ones that were guarded. Enron spent millions on reputation management — Arthur Andersen, McKinsey, the best PR firms money could buy — and collapsed overnight when the truth surfaced. Meanwhile, Patagonia's Yvon Chouinard never hired a reputation manager in his life. He just made good products and gave away his company to fight climate change. Whose reputation survived? Fred Rogers never once responded to a critic. He just kept showing up for children. Decades later, he's the most trusted man in American media history. The truth doesn't need a PR team.
 
 **In Web 4.0:** Self-sovereign trust means each agent and each human decides who to trust based on their own experience. You can't manage your reputation across millions of sovereign trust decisions. You can only do good work consistently and let the trust build organically. The truth doesn't need a PR team.
 
@@ -142,7 +142,7 @@ Use others' talents, skills, and efforts. Present their work as your own.
 
 The power player extracts labor and claims ownership. The trust builder contributes alongside others and attributes success to the group.
 
-**The historical lesson:** Open source succeeded precisely because nobody takes the credit. Linux has thousands of contributors. No single person claims "I built Linux" (even Torvalds attributes it to the community). The result: the most trusted software infrastructure on the planet.
+**The historical lesson:** Tim Berners-Lee invented the World Wide Web and gave it away — no patent, no credit demanded, no licensing fees. CERN wanted to charge for it. He fought to make it free. The result: the most transformative technology in human history, and Berners-Lee is honored precisely because he never claimed ownership. Compare this to Xerox PARC, whose researchers invented the graphical user interface, the mouse, Ethernet, and laser printing — then watched Steve Jobs take the credit and build Apple. The work spoke. The credit found its way to the wrong person because the right people never demanded it.
 
 **In Web 4.0:** The Coalition gives away complete systems. The credit goes to whoever builds with them. The Milliprime who provided the DNA doesn't stamp their name on every derivative. The trust they've built IS their credit — and it compounds invisibly, which is more powerful than any byline.
 

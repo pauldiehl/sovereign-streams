@@ -393,7 +393,45 @@ See [PRODUCT-PORTFOLIO.md](./PRODUCT-PORTFOLIO.md) for the specific products.
 
 ---
 
-## XI. First Steps
+## XI. Context-Sensitive Giving: Don't Add to the Noise
+
+**v0.3.0 addition:** A conversation with a colleague crystallized something important about radical generosity.
+
+### The Problem With "Here's Everything"
+
+Paul walked into a conversation and opened the same way: "I'm just going to give you everything. Here it is. You're part of the Coalition now."
+
+The colleague's reaction wasn't gratitude. It was overwhelm. He's a project manager personality — he's taking plans for the year, he's organized, he's methodical. And his response was: *"Whoa, that's not really what I need. Can you just tell me what's going to happen next? Those are all noise. It's too much."*
+
+He wasn't asking for documents. He was asking for **magic.**
+
+### Radical Generosity ≠ Information Overload
+
+Shoving a million TV channels in front of somebody and asking them to choose doesn't make them happy. It makes them stressed. The Paradox of Choice applies to generosity too: giving someone EVERYTHING can itself be a burden.
+
+This is a critical refinement. The Coalition's spirit is still radical generosity — the open door, the no-strings-attached giving, leaning into the 48 Laws of Trust. But the *form* of giving adapts to the recipient:
+
+**For a Milliprime:** Everything. The full document library. The architecture DNA. The protocol specs. They can handle it. They want it.
+
+**For a business owner:** A button. Press it. Your agent talks to my agent. A toolkit loads. You're in the economy. See [PROTOCOL-EXPLORER.md](./PROTOCOL-EXPLORER.md).
+
+**For an engineer:** The protocol spec, the reference implementation, and "build whatever you want."
+
+**For a project manager:** "Here's what happens next. Step 1, step 2, step 3. Your agent handles the rest."
+
+**For a curious person:** A beliefs endpoint and a network connection. That's enough to start.
+
+### Selective on Context, Not on People
+
+The Coalition is open to literally every person in the world. But the context changes. Paul might have something for everyone — but the packaging adapts to where they are right now, what they need right now, and how they think.
+
+The key: **being selective on who you approach is about timing and context, not about gatekeeping.** Go after everyone eventually. But when you engage, match their context. A PM needs a roadmap. An engineer needs a spec. A visionary needs philosophy. A skeptic needs a demo.
+
+This is itself convergent syndication in action — reverse syndication to understand the person's context, forward syndication to deliver exactly the right gift in exactly the right wrapper.
+
+---
+
+## XII. First Steps
 
 1. **Name the coalition.** It needs an identity. Not a corporate brand — a movement identifier.
 2. **Define the initial offering.** What EXACTLY does Paul give to the first 5-10 coalition members? Specific platforms, components, architectures, playbooks.
@@ -408,16 +446,10 @@ See [PRODUCT-PORTFOLIO.md](./PRODUCT-PORTFOLIO.md) for the specific products.
 
 - [The 48 Laws of Trust](./LAWS-OF-TRUST.md) — The philosophical framework
 - [Self-Sovereign Trust](./SELF-SOVEREIGN-TRUST.md) — The trust philosophy
+- [Protocol Explorer](./PROTOCOL-EXPLORER.md) — The toolkit that onboards anyone into Web 4.0
 - [Convergent Syndication](./CONVERGENT-SYNDICATION.md) — The scaling engine for the Coalition
 - [Product Portfolio](./PRODUCT-PORTFOLIO.md) — What to build now
 - [Agent Exchange](./AGENT-EXCHANGE.md) — Discovery layer
 - [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — How the Coalition feeds the growth strategy
 - [Threat Landscape](./THREAT-LANDSCAPE.md) — What the Coalition defends against
 - [Agentic Progression](./AGENTIC-PROGRESSION.md) — The three stages the Coalition accelerates
-
-- [Convergent Syndication](./CONVERGENT-SYNDICATION.md) — The scaling engine for the Coalition
-- [Agent Exchange](./AGENT-EXCHANGE.md) — The trust layer the Coalition builds on
-- [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — How the Coalition feeds the growth strategy
-- [Threat Landscape](./THREAT-LANDSCAPE.md) — What the Coalition defends against
-- [Agentic Progression](./AGENTIC-PROGRESSION.md) — The three stages the Coalition accelerates
-- [Web4.0 Simulation](./WEB4-SIMULATION.md) — Testing Coalition dynamics in the box

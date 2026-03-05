@@ -37,15 +37,31 @@ The vision was right. The execution was catastrophically wrong.
 
 **DAOs were governance theater.** Member-owned communities without centralized leadership sounds beautiful. In practice: voter apathy, plutocratic token concentration, legal ambiguity, and decision paralysis. Wyoming created DAO LLC structures and almost nobody used them. The overhead of on-chain governance exceeded the value it created for virtually every use case.
 
-### The Core Failure
+### The Deeper Failure: Trust Misunderstood
 
-Web3 failed because it asked normal people to care about infrastructure.
+Before we get to the UX disaster, there's a philosophical failure that nobody talks about.
+
+Web3 called itself "trustless" — and meant it as a feature. The entire architecture was designed to eliminate the need for trust between parties. Smart contracts replace handshakes. On-chain verification replaces reputation. Staking and slashing replace consequences. Every interaction is mediated by code that assumes the other party is adversarial.
+
+**This is the Laws of Power applied to infrastructure.** Conceal your intentions (zero-knowledge proofs). Never put too much trust in friends (trustless verification). Guard your reputation obsessively (on-chain reputation scores). Use selective honesty to disarm (governance tokens that look democratic but concentrate power).
+
+Web3 tried to *engineer around* trust instead of *building on* trust. It created elaborate, expensive machinery to prevent betrayal — and in doing so, prevented trust from forming at all. The overhead was staggering: gas fees, staking requirements, oracle networks, dispute resolution layers, slashing conditions. All of it existed because the system assumed the worst about every participant.
+
+The irony: the cost of all that trustless machinery exceeded the cost of occasional betrayal in a trust-based system. A trust network where 5% of participants are bad actors and you route around them costs a fraction of a network where 100% of participants are treated as potential adversaries and every interaction requires cryptographic proof.
+
+Web3's trust model was rooted in the same worldview as Greene's 48 Laws of Power: everyone is a threat, every interaction is a transaction, and the only safety is in systems that eliminate human judgment. It was a brilliant engineering solution to a problem that was better solved by... trusting people and dealing with the exceptions.
+
+This is why the "trust economy never existed within Web3" — not because the technology was wrong, but because the *philosophy* was wrong. You can't build a trust economy on a foundation that assumes trust is naive.
+
+### The UX Failure
+
+On top of the philosophical failure, Web3 asked normal people to care about infrastructure.
 
 Nobody wants to manage wallet keys. Nobody wants to pay gas fees. Nobody wants to understand consensus mechanisms. Nobody wants to read a smart contract before buying coffee.
 
 Web3 tried to decentralize the *plumbing* and expected users to become plumbers.
 
-That was the fundamental mistake.
+That was the implementation mistake on top of the philosophical one.
 
 ---
 
@@ -103,6 +119,18 @@ The pieces are falling into place:
 The user experiences Web 2.0. The settlement layer runs Web3. The orchestration is Web 4.0.
 
 Nobody needed to understand blockchain for this to work. They just needed agents smart enough to use it.
+
+### Agent-Mediated Trust Transactions
+
+Here's where Web 4.0 diverges from both Web 2.0 and Web3: the exchange of currency for value doesn't require a centralized marketplace, a platform's permission, or even a formal agreement. It happens on a transaction-to-transaction basis, mediated by trust.
+
+Your agent layer knows who to exchange value with and what that exchange looks like. Maybe it's USDC for a service. Maybe it's a favor economy where your agent tracks goodwill. Maybe it's a direct micropayment triggered when someone's content genuinely helped you. The form of the transaction adapts to the relationship.
+
+Between your agent and you, there's a trust compact: "I will act on your behalf within the boundaries you've set." Between your agent and their agent, there's a protocol handshake: "Here's what I offer, here's what I need, here's my trust history." Between two humans who've never met, there's an agent-mediated trust evaluation that replaces both Web 2.0's star ratings and Web3's on-chain reputation scores.
+
+The key insight: much of what makes this work is trust between what your agent layer and you will actually do. The agent doesn't need permission for every $0.003 micropayment. You've set the rules. The agent follows them. And when two agents transact on behalf of humans who trust their agents, the entire overhead of platform mediation, escrow, dispute resolution, and payment processing collapses to near-zero.
+
+This is peer-to-peer value exchange that actually works — not because we eliminated trust (Web3's mistake), but because we delegated it to agents that understand our preferences, our boundaries, and our relationships.
 
 ---
 
