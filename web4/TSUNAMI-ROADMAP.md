@@ -2,8 +2,8 @@
 
 **A Personal Strategy for Igniting Critical Mass**
 **Author:** Paul (Milliprime / 1KH) & Claude (Anthropic)
-**Date:** March 2, 2026
-**Version:** 0.2.0
+**Date:** March 5, 2026
+**Version:** 0.3.0
 
 ---
 
@@ -451,7 +451,34 @@ The redundancy: if agentic rendering is rough, fall back to traditional PWAs. If
 
 ---
 
-## IX. The Exit Condition
+## IX. The Coalition: The Vehicle for Everything Above
+
+**v0.3.0 addition:** The Tsunami Roadmap describes WHAT happens. The [Coalition](./COALITION.md) is HOW it happens.
+
+The Coalition is a network of Milliprimes — visionaries, engineers, creators, system builders — who give each other everything and expect nothing in return. The giving IS the strategy. The trust built through radical generosity IS the economic moat.
+
+**How the Coalition changes each phase:**
+
+| Phase | Without Coalition | With Coalition |
+|-------|------------------|----------------|
+| **1. Build platforms** | Paul builds alone | Coalition members build in parallel, each contributing platforms |
+| **2. Agent Exchange** | Single exchange node | Multiple coalition members running exchange nodes |
+| **3. Content flooding** | Paul funds creators | Every coalition member runs convergent syndication for their domain |
+| **4. Syndication** | Paul recruits influencers | Fractal: each member recruits their own network |
+| **5. Critical mass** | Linear path | Exponential: coalition branches multiply the rate |
+| **6. Execution** | Gradual transition | Coalition's combined trust root accelerates adoption |
+
+**The Coalition race:** Milliprimes working in isolation will have explosive early momentum. But they accumulate zero trust in the exchange. By the time they realize trust is the currency, coalition members will have years of compounding transaction history. The isolated Milliprime is on the outside looking in.
+
+**Convergent Syndication is the engine:** The same reverse→forward syndication pattern used for content works for engineers (give them full systems), influencers (give them platforms with better economics), and system creators (embed agentic infrastructure into their platforms). Each person enrolled runs their own forward syndication cycle. The coalition grows fractally.
+
+**Radicalized Open Source:** Not GitHub forks. Agent-enrolled partnerships. Members don't just get code — they get complete systems, playbooks, governance templates, user acquisition strategies. No strings. No license restrictions. Creating competitors who strengthen the network.
+
+Full details: [COALITION.md](./COALITION.md) and [CONVERGENT-SYNDICATION.md](./CONVERGENT-SYNDICATION.md).
+
+---
+
+## X. The Exit Condition
 
 **When is the tsunami roadmap complete?**
 
@@ -461,7 +488,7 @@ That's the exit. Not an IPO. Not an acquisition. The exit is **irrelevance** —
 
 ### But Also: Keep Building
 
-The exit from the TSUNAMI is not the exit from Web 4.0. Once the wave is rolling, Paul keeps building. Health insurance. Education. Government services. The pattern is proven. The trust is established. The reputation is the moat — like an eBay seller with 100,000 verified transactions. New products launch in hours. New industries get disrupted in weeks. The Tsunami Roadmap creates the conditions. What comes after is everything else.
+The exit from the TSUNAMI is not the exit from Web 4.0. Once the wave is rolling, the Coalition keeps building. Health insurance. Education. Government services. The pattern is proven. The trust is established. The reputation is the moat — like an eBay seller with 100,000 verified transactions. New products launch in hours. New industries get disrupted in weeks. The Tsunami Roadmap creates the conditions. What comes after is everything else.
 
 ---
 
@@ -472,4 +499,6 @@ The exit from the TSUNAMI is not the exit from Web 4.0. Once the wave is rolling
 - [Agentic Execution](./AGENTIC-EXECUTION.md) — The broader execution framework
 - [Agent Exchange](./AGENT-EXCHANGE.md) — The decentralized agent marketplace
 - [Web 4.0 Economics](./WEB4-ECONOMICS.md) — Tokenized value and payment infrastructure
+- [The Coalition](./COALITION.md) — The radical trust-building open network
+- [Convergent Syndication](./CONVERGENT-SYNDICATION.md) — The universal scaling engine
 - [Good Vibes Playbook](./GOOD-VIBES-PLAYBOOK.md) — Product-specific growth strategy
