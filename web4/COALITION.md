@@ -177,35 +177,19 @@ Traditional open source has rules: licenses (MIT, GPL, Apache), contribution gui
 
 ---
 
-## VI. The Trust Chain Problem
+## VI. The Trust Philosophy: Self-Sovereign Trust
 
-Paul raised a critical concern: "Trust chains are very worrisome to me — how does an agent maintain that trust? How do they just know?"
+**v0.1.1 update:** The original version of this section described trust as a measured, scored, on-chain mechanism. Paul's further thinking revealed a deeper truth: trust is personal, sovereign, and cannot be engineered. See [SELF-SOVEREIGN-TRUST.md](./SELF-SOVEREIGN-TRUST.md) for the complete philosophy.
 
-### Web 3.0's Trust Failures
+**The core principle:** Each agent and each human are in charge of who they trust. That's it. No central authority owns trust. No universal ledger records it. No algorithm computes it. Self-governance is the protocol.
 
-Crypto promised trustless systems. In practice:
-- DeFi protocols get exploited regularly (bridge hacks, flash loan attacks, rug pulls)
-- People run off with the money (exit scams, fraudulent ICOs, insolvent exchanges)
-- "Trustless" turned out to mean "trust the code" — and the code has bugs
-- Smart contract exploits have drained billions
+**Why this works for the Coalition:** The Coalition's radical generosity IS the trust primitive. When a Milliprime gives everything to a new member with no strings attached, that act establishes trust more powerfully than any transaction ledger or smart contract. Agents that observe giving behavior — without conditions, without expectations — can factor this into their own trust decisions.
 
-Paul's question: "Maybe that's naive of me, maybe it's ignorant of the realities and why trustless systems exist in the first place..."
+**The exception hunting trap:** People will hunt for the exception as if it breaks the whole system. Bad actors exist. Fraud happens. But the cost of building enforcement machinery to prevent all betrayal is worse than the occasional betrayal itself. Self-sovereign trust accepts the risk and routes around failures, just like human trust networks always have.
 
-### Why Web 4.0 Trust Is Different
+**What we keep:** Governance protocols (as promises, not enforcement), the Agent Exchange (as discovery, not trust authority), agent identity verification (cryptographic — to know WHO someone is, separate from whether to TRUST them).
 
-It's not naive. It's a different model. Web 3.0 tried to eliminate trust entirely (trustless systems). Web 4.0 embraces trust as the foundation but makes it verifiable and recoverable.
-
-**Key differences:**
-
-**Trust is earned, not assumed.** Web 3.0 trustless systems assume you can't trust anyone, so they use cryptographic enforcement. Web 4.0 trust systems track actual behavior — real transactions, real fulfillment, real satisfaction — and use that track record to inform future decisions. The trust is empirical, not theoretical.
-
-**Trust is granular.** You don't trust or distrust a provider wholesale. You trust them for specific things, at specific levels, based on specific history. "I trust this coffee shop agent for my morning order (100 successful transactions). I don't trust them for catering (no history)." Agents understand context.
-
-**Trust degrades gracefully.** If a provider fails once, their trust score drops — it doesn't go to zero. The agent adjusts. If the failure was minor (late delivery), the adjustment is small. If it was major (fraudulent charge), the adjustment is severe. This is how human trust works, formalized for agents.
-
-**Trust is repairable.** A provider who fails can recover by demonstrating changed behavior over time. This is fundamentally different from Web 3.0, where a rug pull is permanent and irreversible. Web 4.0 trust acknowledges that mistakes happen and recovery is possible.
-
-**Trust has cost.** Building fake trust requires real transactions with real economic cost. You can't game the trust system without spending real money — and the cost scales with the deception. This makes trust attacks economically irrational at scale.
+**What we drop:** On-chain trust scores, staking/slashing mechanisms, centralized dispute resolution. Trust is personal. Not public. Not scored. Not enforced.
 
 ### How Agents "Just Know"
 

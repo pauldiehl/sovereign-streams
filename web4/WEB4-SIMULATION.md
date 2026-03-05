@@ -11,6 +11,10 @@
 
 ---
 
+> **Strategic Note (v0.1.1):** This simulation is a valuable design exercise but is **deprioritized** relative to direct Coalition building. The questions this simulation answers — critical mass thresholds, trust curve shapes, communication pattern distribution — will be answered faster and more reliably by enrolling real Milliprimes, real engineers, and real creators through [Convergent Syndication](./CONVERGENT-SYNDICATION.md). The simulation remains a reference architecture for anyone in the Coalition who wants to build it. It is NOT a prerequisite for launching the Coalition. See [SELF-SOVEREIGN-TRUST.md](./SELF-SOVEREIGN-TRUST.md) for why the trust model shifted away from scored/measured trust toward self-sovereign trust, which further reduces the simulation's urgency.
+
+---
+
 ## I. Why Simulate
 
 Web 4.0 is an ecosystem play. Agents discovering each other, negotiating governance protocols, building trust, exchanging value — none of this works in isolation. You can't test a single agent and declare the architecture viable. You need to test the ecosystem: the interactions between dozens of agents, the emergent behaviors that arise from those interactions, and the critical mass threshold where the ecosystem becomes self-sustaining.
