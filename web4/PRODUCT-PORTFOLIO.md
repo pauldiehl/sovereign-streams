@@ -11,7 +11,59 @@
 
 ---
 
-## I. The Dual-Track Strategy
+## I. The Priority Stack: Top 3 Initiatives
+
+**v0.2.0 addition:** After extensive deliberation, these are the three initiatives that create the maximum flywheel between paying bills, seeding Web 4.0, and living life. Everything else feeds into these.
+
+### Initiative #1: ManVsHealth as Web 4.0 Pioneer
+
+MVH is already running, already has users, already generates revenue. The move: make it the **first entity fully on Web 4.0 protocols.** Deploy `/.well-known/governance.json`, `haves.json`, `needs.json`, `payments.json` on manvshealth.com. MVH becomes the reference implementation AND the revenue source.
+
+When showing Joey or any Milliprime "here's what Web 4.0 looks like in production," point to manvshealth.com — REAL protocols on a REAL business making REAL money. More convincing than any manifesto. The dual-track is literal: MVH makes money today (Web 2.0) and IS the Web 4.0 demo.
+
+**This week:** Deploy Protocol Explorer protocols on manvshealth.com.
+
+### Initiative #2: Good Vibes + PUP + Audacity — The Match
+
+The product from the Manifesto. The one that makes people FEEL Web 4.0. A man opens the app at 5AM and his algorithm composes a 15-minute session that makes him feel like a warrior. He keeps coming back.
+
+Good Vibes is the most shareable, most visceral, most demonstrable Web 4.0 product. PUP + Audacity are channels WITHIN Good Vibes — not separate products. Build as the second Protocol Explorer deployment. The governance protocol becomes a template any creator can fork. The enrichment pipeline becomes a reusable component.
+
+This is the product that finds influencers through convergent syndication. When a creator sees "I keep 85%+ and my audience gets a personalized experience" — that's the enrollment moment.
+
+**This month:** Good Vibes MVP using the same protocol architecture as MVH.
+
+### Initiative #3: The Protocol Explorer Toolkit — The Button
+
+Not an "app" in the traditional sense. The onboarding mechanism for the Coalition. The thing Paul's friend wants: press a button, your agent talks to my agent, a toolkit loads, your protocols go live, you're in the economy.
+
+Build as a lightweight service — even a simple web page that walks someone through deploying their protocols. CLI comes later. Agent-to-agent handshake comes later. Core ships this month.
+
+See [PROTOCOL-EXPLORER.md](./PROTOCOL-EXPLORER.md) for the full specification.
+
+**This month:** Build web interface. Onboard Joey as first Coalition member through it.
+
+### The Flywheel
+
+```
+MVH proves protocols work
+    → Good Vibes proves the experience works
+        → Protocol Explorer lets anyone replicate both
+            → Coalition grows
+                → Trust compounds
+                    → More products become possible
+```
+
+### What About Everything Else?
+
+- **CoachKid** — Keep rolling as family project. Already building Torty Martial Arts with daughter. Feeds into Good Vibes naturally (coaching content as a stream). Weekend project.
+- **Sovereign Family** — Embedded in Good Vibes. The governance protocol for kids' content IS Sovereign Family. Don't build separately.
+- **Stanzas, Itzda, YOMO** — Good Vibes siblings. Same architecture once it's proven. Queue for after Good Vibes ships.
+- **FREELTOR, Car Sales, LilBiz MKT** — Tier 4. Require the trust network to be live. 6+ months out.
+
+---
+
+## II. The Dual-Track Strategy
 
 Track 1: Build products that generate Web 2.0 revenue TODAY. High value, low overhead, fast speed, high margins. Make astounding lead magnets that customers can't ignore. Pay the bills.
 

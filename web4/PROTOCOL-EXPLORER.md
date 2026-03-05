@@ -3,7 +3,7 @@
 **Press the Button. Become Web 4.0.**
 **Author:** Paul (Milliprime / 1KH) & Claude (Anthropic)
 **Date:** March 5, 2026
-**Version:** 0.1.0
+**Version:** 0.2.0
 
 ---
 
@@ -211,40 +211,191 @@ This is the sticky note board from the classroom — except it runs 24/7, across
 #### `/.well-known/network.json`
 **What it broadcasts:** Your trust chain. Who you've worked with. Who you vouch for. Your version of the Web 4.0 directory.
 
+**Two sections. Two depths.** Think of LinkedIn:
+
+**CONNECTIONS** = your LinkedIn connections. People you've actually worked with, transacted with, built trust with. Maybe 30 people. But the data on each one is DEEP — not a name and a trust level, but a full nested profile. Their skills, your history together, their strengths, their warnings. This is where you've done the real work of knowing someone.
+
+**DIRECTORY** = every LinkedIn profile you've ever seen. Thousands of entities. You scrolled past them, your agent discovered them, someone mentioned them. You haven't worked with them. You don't vouch for them. But you've OBSERVED them. Surface-level data. A breadcrumb trail for your agent to follow later if a match appears.
+
 ```json
 {
   "protocol": "web4-network",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "updated": "2026-03-05T00:00:00Z",
   "visibility": "public",
   "connections": [
     {
       "identity": "npub1_paul...",
+      "domain": "pauldiehl.com",
       "display_name": "Paul (1KH)",
       "relationship": "coalition_founder",
       "since": "2026-03-01",
       "trust_level": "high",
-      "note": "Gave me the complete Web 4.0 toolkit. Building together."
+      "note": "Gave me the complete Web 4.0 toolkit. Building together.",
+
+      "profile": {
+        "bio": "Milliprime. Building the trust economy. ManVsHealth founder.",
+        "type": "individual",
+        "specialties": ["protocol_architecture", "product_strategy", "trust_economics", "streaming_platforms"],
+        "platforms": ["manvshealth.com", "sovereign-streams"],
+        "protocols_deployed": ["identity", "governance", "haves", "needs", "network", "beliefs", "payments"]
+      },
+
+      "interaction_history": {
+        "first_contact": "2026-03-01",
+        "last_interaction": "2026-03-05",
+        "interaction_count": 14,
+        "collaboration_type": ["protocol_design", "coalition_building", "code_sharing"],
+        "projects_together": [
+          {
+            "name": "Payment gateway integration",
+            "status": "completed",
+            "outcome": "successful",
+            "date": "2026-03-03"
+          },
+          {
+            "name": "Protocol Explorer architecture",
+            "status": "in_progress",
+            "started": "2026-03-05"
+          }
+        ],
+        "value_exchanged": {
+          "given": ["payment_infrastructure_access", "stripe_connect_setup", "fintech_introductions"],
+          "received": ["complete_web4_toolkit", "coalition_membership", "protocol_architecture_guidance"]
+        }
+      },
+
+      "trust_assessment": {
+        "overall": "high",
+        "reliability": "high",
+        "skill_verified": true,
+        "delivers_on_commitments": true,
+        "governance_alignment": "strong",
+        "would_vouch_publicly": true,
+        "last_evaluated": "2026-03-05"
+      },
+
+      "signals": {
+        "positive": ["responds_within_hours", "overshares_resources", "transparent_about_failures", "actively_coaches"],
+        "cautions": [],
+        "flags": []
+      }
     },
     {
       "identity": "npub1_engineer...",
+      "domain": "agentforge.dev",
       "display_name": "Sarah (AgentForge)",
       "relationship": "collaborator",
       "since": "2026-03-10",
       "trust_level": "medium",
-      "note": "Met through coalition. Building agent handshake tools."
+      "note": "Met through coalition. Building agent handshake tools.",
+
+      "profile": {
+        "bio": "Agent protocol engineer. Open source contributor.",
+        "type": "individual",
+        "specialties": ["agent_protocols", "MCP", "distributed_systems"],
+        "platforms": ["agentforge.dev"],
+        "protocols_deployed": ["identity", "haves", "needs"]
+      },
+
+      "interaction_history": {
+        "first_contact": "2026-03-10",
+        "last_interaction": "2026-03-14",
+        "interaction_count": 5,
+        "collaboration_type": ["code_review", "protocol_feedback"],
+        "projects_together": [
+          {
+            "name": "Handshake endpoint spec review",
+            "status": "completed",
+            "outcome": "successful",
+            "date": "2026-03-12"
+          }
+        ]
+      },
+
+      "trust_assessment": {
+        "overall": "medium",
+        "reliability": "high",
+        "skill_verified": true,
+        "delivers_on_commitments": true,
+        "governance_alignment": "moderate",
+        "would_vouch_publicly": false,
+        "last_evaluated": "2026-03-14",
+        "note": "Strong engineer. Still building the relationship. Need more interactions before full vouching."
+      },
+
+      "signals": {
+        "positive": ["clean_code", "thoughtful_reviews", "quick_turnaround"],
+        "cautions": ["sometimes_overcommits"],
+        "flags": []
+      }
     }
   ],
+
   "directory": [
     {
-      "identity": "npub1_unknown...",
-      "domain": "agentforge.dev",
+      "domain": "trustledger.io",
+      "display_name": "TrustLedger",
+      "type": "business",
       "discovered": "2026-03-12",
+      "discovered_via": "reverse_syndication_scan",
+      "surface_data": {
+        "bio": "Decentralized trust scoring",
+        "protocols_detected": ["identity", "governance", "exchange"],
+        "apparent_specialties": ["trust_metrics", "reputation_systems"]
+      },
+      "interest_level": "medium",
       "note": "Found via reverse syndication. Haven't worked together yet. Looks promising."
+    },
+    {
+      "domain": "brightpath.dev",
+      "display_name": "BrightPath Solutions",
+      "type": "business",
+      "discovered": "2026-03-08",
+      "discovered_via": "coalition_member_referral",
+      "surface_data": {
+        "bio": "Platform engineering consultancy",
+        "protocols_detected": ["identity", "haves"],
+        "apparent_specialties": ["platform_engineering", "API_design"]
+      },
+      "interest_level": "low",
+      "note": "Paul mentioned them. Haven't investigated yet."
     }
   ]
 }
 ```
+
+### The LinkedIn Analogy
+
+Think about your LinkedIn:
+
+**Your 30 connections** = people you KNOW. You've worked with them. You could write a paragraph about each one. You know their strengths, their weaknesses, what they're like to work with, whether they deliver. If someone asks "is Sarah good at agent protocols?" you can answer from experience. That's your `connections` array — deep, nested, experience-based profiles.
+
+**The 3,000 profiles you've browsed** = people you've SEEN. You scrolled past them, someone appeared in your feed, you clicked a profile out of curiosity. You don't know them. You can't vouch for them. But you're aware they exist. That's your `directory` array — surface-level, agent-discovered, breadcrumbs for future exploration.
+
+Your agent manages both. Connections get richer over time — every interaction adds data. Directory entries get promoted to connections when you actually work with someone. And connections can get demoted or flagged when trust erodes.
+
+### The Bad-Egg Problem
+
+Here's where this gets powerful for service businesses. Paul's friend runs a payments company. He's had clients who are nightmares — the "bad egg" customers who drain resources, dispute everything, and poison the working relationship.
+
+In Web 2.0, there's no way to signal this. You eat the cost, fire the client quietly, and hope the next person isn't worse.
+
+In Web 4.0, your `signals` field carries it:
+
+```json
+"signals": {
+  "positive": ["pays_on_time", "clear_requirements"],
+  "cautions": ["scope_creep_tendency", "slow_to_respond_to_reviews"],
+  "flags": ["disputed_3_invoices", "violated_governance_agreement_2026_02"]
+}
+```
+
+This isn't a public review. It's YOUR assessment, in YOUR network data, visible to agents that YOU allow to read your network. When another coalition member's agent is considering a deal with that entity, it can check: "Two of your trusted connections have flagged this entity for invoice disputes. Want to proceed with caution?"
+
+The bad-egg signal propagates through trust, not through a centralized review system. No one entity controls the reputation. But trust flows through the network, and warnings flow with it.
+
+**Critical distinction:** This is NOT a blacklist. It's not a credit score. It's individual trust assessments shared selectively through trusted channels. The entity with the flags can still transact — they just encounter informed counterparties who know to set clearer terms upfront. That's healthy. That's how trust works in real communities. The barber tells the next barber about the client who no-showed three times. Word of mouth, but at protocol speed.
 
 **The directory problem solved:** Each entity maintains their own directory. Their version. Their trust assessments. Agents aggregate across directories to build a picture of the Web 4.0 economy. No central registry needed. The network IS the directory.
 
@@ -496,7 +647,82 @@ This is how the protocol library goes from 20 to 50 to 1,000 to a billion. Not c
 
 ---
 
-## VII. Hosting: Do You Need an Address?
+## VII. Identity: When Is a Domain Enough?
+
+There is no federated identity in Web 4.0. No "sign in with your Web4 account." No universal ID system. That's by design — federated identity is a centralization trap wearing decentralization clothing.
+
+So when does cryptographic identity (like a Nostr npub/nsec keypair) actually matter, and when is a plain domain sufficient?
+
+### The Identity Spectrum
+
+```
+DOMAIN ONLY                                    CRYPTOGRAPHIC KEYPAIR
+(low stakes)                                   (high stakes)
+    │                                               │
+    ├── Publishing protocols                        ├── Signing financial transactions
+    ├── Broadcasting haves/needs                    ├── Vouching for another entity
+    ├── Hosting an AGENTS.md                        ├── Agent-to-agent handshakes
+    ├── Directory entries                           ├── Favor economy tracking
+    ├── Beliefs, governance                         ├── Dispute resolution evidence
+    │                                               ├── Cross-platform identity proof
+    │                                               └── Protocol version signing
+    │
+    "I am joeyspayments.com"                   "I am npub1_joey... and I can PROVE it"
+```
+
+### When a Domain Is Enough
+
+For most of what the Protocol Explorer deploys, a domain is sufficient identity. If you're `joeyspayments.com` and you serve `/.well-known/governance.json` from that domain, agents know your governance because they trust DNS and HTTPS. Someone who controls the domain controls the protocols on it. Simple.
+
+This covers publishing your haves, needs, beliefs, governance, enrichment, open signals, and greenspaces. Read-only, broadcast-style protocols. The domain IS your identity for these purposes, just like your website IS your identity in Web 2.0.
+
+### When Cryptographic Identity Matters
+
+Signing keys become essential when you need to do something that your domain alone can't prove:
+
+**Signing transactions.** When your agent agrees to a deal with another agent, both sides need proof that can't be forged or repudiated. "Joey's agent agreed to provide payment gateway setup for free" — that agreement needs a cryptographic signature, not just a URL.
+
+**Vouching across domains.** When you say "I trust Sarah at agentforge.dev" in your network.json, agents in the network need to verify that YOU said that, not someone who hacked your website for five minutes. The vouching carries weight because it's signed with your private key.
+
+**Agent-to-agent handshakes.** When two agents meet at `/handshake`, they need mutual authentication. "I represent joeyspayments.com" — prove it. The keypair is the proof.
+
+**Portability.** If Joey moves from `joeyspayments.com` to `joeypay.io`, the domain changes but the npub stays the same. Agents in the network can verify: same entity, new address. Without a keypair, a domain change would break every trust chain.
+
+**Dispute resolution.** If two entities disagree about what was agreed, signed records are the evidence. "Here's the handshake transcript, signed by both parties." No he-said-she-said.
+
+### How Agents Handle This
+
+Here's the key insight: **agents manage the keys, not humans.** Joey never sees his npub or nsec. He doesn't care. His agent generated the keypair when the Protocol Explorer toolkit ran. The keys live in the agent's secure storage. When Joey's agent needs to sign something, it signs. When another agent needs to verify Joey, it checks the signature against the public key published in `identity.json`.
+
+```json
+{
+  "protocol": "web4-identity",
+  "version": "0.2.0",
+  "domain": "joeyspayments.com",
+  "npub": "npub1_joey...",
+  "display_name": "Joey's Payments Co",
+  "type": "business",
+  "identity_model": {
+    "primary": "domain",
+    "signing": "npub",
+    "key_managed_by": "agent",
+    "human_interaction_required": false,
+    "note": "Domain for discovery. Keypair for verification. Agent handles both."
+  }
+}
+```
+
+### The Progression
+
+For Version 1 of the Protocol Explorer, domains are the primary identity. Every entity needs somewhere to host their protocols — that's their domain, that's their address.
+
+Keypairs are generated automatically by the toolkit and used behind the scenes. Most people won't know they have one. But every handshake is signed, every vouch is signed, every transaction is signed. The trust chain is cryptographically verifiable even though the human never touches a key.
+
+Over time, as the network matures and agents become more autonomous (see [Saunter AI](./SAUNTER-AI.md)), cryptographic identity becomes MORE important — because agents are transacting at machine speed and need instant verification. But the human still doesn't care. The agent handles it. That's the point: sovereignty without the homework.
+
+---
+
+## VIII. Hosting: Do You Need an Address?
 
 **Short answer: Yes, for now. Eventually, maybe not.**
 
@@ -521,7 +747,7 @@ Protocol-as-identity. Your protocols ARE you. They travel with your agent across
 
 ---
 
-## VIII. The Favor Economy Protocol
+## IX. The Favor Economy Protocol
 
 Paul identified something that existing payment systems can't handle: the favor.
 
@@ -548,7 +774,7 @@ Not enforced. Not obligatory. Just... remembered. And offered. That's the favor 
 
 ---
 
-## IX. Building This Today
+## X. Building This Today
 
 ### Week 1: The Core Toolkit
 
@@ -581,7 +807,7 @@ Not enforced. Not obligatory. Just... remembered. And offered. That's the favor 
 
 ---
 
-## X. What This Means for the Coalition
+## XI. What This Means for the Coalition
 
 The Protocol Explorer solves Paul's friend's problem. He doesn't want noise. He doesn't want a manifesto. He wants magic.
 
