@@ -340,17 +340,80 @@ The coalition member's revenue comes from:
 
 ---
 
-## X. First Steps
+## X. Trust Equity and Structureless Momentum
+
+**v0.2.0 addition:** These concepts crystallized during Paul's 3-hour conversation with Joey — the Coalition's first enrolled Milliprime.
+
+### The Joey Conversation
+
+Joey runs a payments company. His investors talk EQUITY constantly — who gets what for how much. This slows them down. They formalize business (SLOW). They put in contracts (SLOW). They spend hours in meetings. The network they create is shallow and always thinking "what's in it for me?"
+
+Paul's pitch: "I want you to be a Milliprime. I want to give you everything." Joey was thrown off. But he recognized something.
+
+Joey's questions were the right questions:
+1. "How do we WORK TOGETHER?" — He trusts Paul, but his investor partners are all about money.
+2. "I am concerned for our kids, humanity's future. We need to reshape things but also provide for our families."
+3. He thinks mass chaos and destabilization come before the pieces land.
+
+### The Working Agreement: Structurelessness IS Momentum
+
+The answer they found: **no formal partnership at all.**
+
+Each member is their own monarch. They build their own systems. They have conversations. They play. They even compete. And they still give to each other — because whatever value they extract from Web 2.0 today, they're investing in the Web 4.0 economy of tomorrow through the Coalition's trust network.
+
+**The scenario that proves it:** Joey is taking time off next week to be with family. In a traditional 50/50 partnership, Paul might be upset — "here I am trying to launch a product and my partner is on vacation." The conversations about measuring results, money invested, effort parity — they're endless and corrosive.
+
+In the Coalition: no expectation. Paul holds no expectation of Joey. The more Paul puts in, the more trust equity he accumulates for himself. If Joey takes a break, the relative difference in trust equity is reflected — Paul accrues more, Joey accrues less. True equilibrium without any formalization.
+
+No victim mentality. No blame. Full self-governance.
+
+### Trust Equity
+
+Trust Equity is the combination of results, effort, and opportunities rolled up. It's not measured by anyone. It's not tracked on a ledger. It's the natural consequence of showing up and giving.
+
+Some coalition members will accumulate more trust equity than others. Not because the system is unfair — because some people give more, build more, show up more. The equilibrium is self-governing. No external measurement needed.
+
+**The critical insight:** No formal partnerships removes ALL friction. The structures that created friction historically — equity negotiations, contracts, contribution tracking, vesting schedules — are all going away. Trust replaces them. Trust moves faster than anything decentralized networks have ever offered.
+
+The truth is: trust has always been there. It has always existed as the real operating system underneath everything. The structures were overhead. The friction was waste. Remove them and what's left is people doing good work together because they choose to.
+
+### Those Who Don't Join
+
+"Fine. I hope you make a thousand systems in your silo and get value today. But once Web 4.0 comes along and you try to offer what we're doing, you can't — unless you join the network. The network IS the product. That fully encompassing network isn't just the economy — it's self-actualizing algorithms for the user. Only being part of that network and having trust provides intelligence at levels beyond what we can appreciate today. The more trust you have, the more you can buy, the more you can offer, and you win by collaborating."
+
+### Reshaping the World While Paying Bills
+
+Paul's strategy is dual-track:
+1. **Web 2.0 revenue NOW:** Build products. Sell them. Make astounding lead magnets that attract customers at prices they can't ignore. Low overhead, fast speed, high margins. This pays the bills.
+2. **Web 4.0 trust CONCURRENT:** While products scale, use convergent syndication to find Milliprimes who are givers. Give them the product DNA. Create competitors. Invest every dollar of trust into the Web 4.0 network.
+
+The Web 2.0 revenue funds the Web 4.0 transition. The two tracks run simultaneously until the trust network reaches critical mass — then Web 4.0 becomes the primary economy and the Web 2.0 revenue becomes the legacy income stream.
+
+See [PRODUCT-PORTFOLIO.md](./PRODUCT-PORTFOLIO.md) for the specific products.
+
+---
+
+## XI. First Steps
 
 1. **Name the coalition.** It needs an identity. Not a corporate brand — a movement identifier.
 2. **Define the initial offering.** What EXACTLY does Paul give to the first 5-10 coalition members? Specific platforms, components, architectures, playbooks.
-3. **Build the enrollment protocol.** The agent-enrollment process described above. Even a v0.1 version where enrollment is mostly manual creates the trust primitive.
-4. **Identify 5 candidate Milliprimes.** Starting with the peer from the 3-hour conversation. Who are the next 4?
+3. **Build the enrollment protocol.** Even a v0.1 version where enrollment is mostly manual creates the trust primitive.
+4. **Identify 5 candidate Milliprimes.** Starting with Joey. Who are the next 4?
 5. **Run the first convergent syndication cycle.** Find 10 engineers in distress. Offer them everything. See who lights up.
+6. **Ship a product this week.** Pay the bills while building the future.
 
 ---
 
 ## Related Documents
+
+- [The 48 Laws of Trust](./LAWS-OF-TRUST.md) — The philosophical framework
+- [Self-Sovereign Trust](./SELF-SOVEREIGN-TRUST.md) — The trust philosophy
+- [Convergent Syndication](./CONVERGENT-SYNDICATION.md) — The scaling engine for the Coalition
+- [Product Portfolio](./PRODUCT-PORTFOLIO.md) — What to build now
+- [Agent Exchange](./AGENT-EXCHANGE.md) — Discovery layer
+- [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — How the Coalition feeds the growth strategy
+- [Threat Landscape](./THREAT-LANDSCAPE.md) — What the Coalition defends against
+- [Agentic Progression](./AGENTIC-PROGRESSION.md) — The three stages the Coalition accelerates
 
 - [Convergent Syndication](./CONVERGENT-SYNDICATION.md) — The scaling engine for the Coalition
 - [Agent Exchange](./AGENT-EXCHANGE.md) — The trust layer the Coalition builds on
