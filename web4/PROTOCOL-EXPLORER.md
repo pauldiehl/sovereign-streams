@@ -3,7 +3,7 @@
 **Press the Button. Become Web 4.0.**
 **Author:** Paul (Milliprime / 1KH) & Claude (Anthropic)
 **Date:** March 5, 2026
-**Version:** 0.3.0
+**Version:** 0.4.0
 
 ---
 
@@ -941,7 +941,229 @@ Not enforced. Not obligatory. Just... remembered. And offered. That's the favor 
 
 ---
 
-## XI. Building This Today
+## XI. Aura Hashing: Reading the Network Like a Face
+
+Everything has a feel. Humans know this instinctively — you look at a person's face, a storefront, a website, a piece of music, and you get a sense. Not a list of features. Not a rating. A *feel*. Some people have better intuition for this than others, but everyone does it. It's the skill that interprets aura.
+
+Web 4.0 entities are the same. Every protocol set, every identity, every dream beacon, every interaction history — they radiate something. Right now, an agent has to READ every protocol, parse every JSON file, cross-reference every network connection to understand an entity. That's reading petabytes to understand a vibe.
+
+Aura Hashing compresses that. One hash. One signal. Everything the entity IS, expressed as something an agent can read at a glance.
+
+### What Is an Aura Hash?
+
+An Aura Hash is a multi-dimensional representation of an entity's complete protocol state — identity, governance commitments, haves, needs, beliefs, network connections, interaction history, dream beacons, eureka moments, favor balances, trust signals — all compressed into a single, dense, omni-dimensional structure.
+
+Think of it like a face. When you see a face, you don't process each feature sequentially — nose width, eye color, brow position. You see the WHOLE thing, instantly, and your brain extracts meaning: trustworthy, tired, excited, hiding something, genuine. That's what an Aura Hash does for agents. It's the face of a protocol set.
+
+#### `/.well-known/aura.json`
+
+```json
+{
+  "protocol": "web4-aura",
+  "version": "0.1.0",
+  "entity": "manvshealth.com",
+  "generated": "2026-03-06T00:00:00Z",
+  "hash": "aura_v1_7f3a9c2d...",
+  "dimensions": {
+    "trust_density": 0.87,
+    "generosity_index": 0.92,
+    "alignment_spectrum": ["health", "sovereignty", "trust_economy"],
+    "activity_momentum": "accelerating",
+    "network_reach": "expanding",
+    "dream_state": "active",
+    "governance_integrity": 0.95
+  },
+  "snapshot": true,
+  "note": "This aura was computed from the complete protocol state at generation time. It changes as the entity changes."
+}
+```
+
+### The Technical Shape
+
+Technically, Aura Hashing is embedding generation applied to protocol sets. Take every JSON file an entity publishes, every interaction log, every network signal — flatten it into a vector in high-dimensional space. The resulting embedding IS the aura. Two entities with similar auras are aligned. Two entities with divergent auras are different — not necessarily opposed, just different.
+
+**Cosine similarity between aura hashes** = how aligned two entities feel. Not just whether they offer the same services, but whether their ENTIRE approach to the world resonates.
+
+**Temporal aura tracking** = the same entity hashed at different times. People change. Moods shift. Businesses evolve. An aura from Monday might look different from an aura on Friday. Tracking the 4D progression of an entity's aura reveals momentum, trajectory, and phase shifts. Is this entity stabilizing? Accelerating? Deteriorating? Growing?
+
+**Relationship auras** = the aura of a CONNECTION, not just the entities on each end. The interaction history, the favor balance, the trust signals, the collaboration projects — all hashed into the aura of the relationship itself. With N entities, that's N(N-1)/2 relationship auras. The network itself has a feel. You can see which clusters are thriving and which are stagnating.
+
+### Reading the Internet in One Image
+
+Imagine zooming out. Every entity in the Web 4.0 network has an aura hash. Aggregate them. Instead of reading petabytes of protocol data, you read a gigabyte of aura hashes and see:
+
+A field of fireflies. Some shine brighter — entities with strong trust density, active dream beacons, high momentum. Others are dark — dormant, stale, or flagged. Some cluster tightly — aligned entities collaborating. Others drift alone — independent, searching, or new.
+
+And you see it in motion. Over time. Fireflies brightening as they find collaborators. Clusters forming around dream beacons. Bad eggs dimming as trust signals propagate warnings. The network IS a living organism, and the aura map is its vital signs.
+
+Actionable intelligence: where is alignment? Where is danger? Where is joy, suffering, stagnation, acceleration? The aura hash answers in a glance what protocol crawling answers in hours.
+
+### Aura Hashing and Dream Beacons
+
+A Dream Beacon is a signal fire. An Aura Hash tells you how bright it's burning and who can see it.
+
+When a Milliprime's dream beacon first appears, it might be a whisper — low momentum, sparse context, no connections. But if that Milliprime embodies audacity — if their governance is solid, their network is alive, their generosity index is high — their aura hash amplifies the dream. The dream might be quiet, but the dreamer is loud. Agents in the network cross-reference: "This dream beacon has low content but the dreamer's aura is extraordinary. Flag for investigation."
+
+The goal: help Milliprimes shine their dream beacons brighter. Not by making them louder — by making them more aligned, more connected, more generous, more active. Their aura does the amplification. Audacity isn't volume. It's resonance.
+
+### What Aura v1 Looks Like
+
+In its simplest form, Aura v1 is just: take every protocol JSON an entity publishes, concatenate them, run them through an embedding model, output a vector. That vector is the aura hash.
+
+Comparison is cosine similarity. Visualization is dimensionality reduction (t-SNE, UMAP) projecting onto a 2D map. Temporal tracking is the same entity embedded at regular intervals, plotted as a trajectory.
+
+The infrastructure cost is minimal — embedding models are cheap and fast. The insight is extraordinary. We stop reading the internet and start SEEING it.
+
+---
+
+## XII. Protocol Syndication: Protocols About Protocols
+
+The Protocol Explorer currently defines ~20 core protocols. But Web 4.0 isn't a closed system. Anyone can invent a new protocol. Dream Beacons started as a conversation. Aura Hashing started as a vision. The next breakthrough protocol might come from Ryan or Joey or someone who hasn't pressed the Button yet.
+
+The network needs a way for new protocols to SPREAD. Not through a central registry. Through syndication — the same pattern that powers content distribution, applied to protocol schemas.
+
+### The Open Protocol Registry
+
+#### `/.well-known/protocol-registry.json`
+
+```json
+{
+  "protocol": "web4-protocol-registry",
+  "version": "0.1.0",
+  "description": "Protocols I've created, adopted, or discovered",
+  "created": [
+    {
+      "name": "web4-dream",
+      "version": "0.1.0",
+      "schema_url": "https://pauldiehl.github.io/.well-known/schemas/dream.json",
+      "description": "Broadcast your dream to the trust network",
+      "status": "active",
+      "adoption_count": 47,
+      "created_by": "pauldiehl.github.io"
+    }
+  ],
+  "adopted": [
+    {
+      "name": "web4-identity",
+      "version": "0.1.0",
+      "source": "protocol-explorer.github.io",
+      "adopted_on": "2026-03-05"
+    },
+    {
+      "name": "web4-aura",
+      "version": "0.1.0",
+      "source": "pauldiehl.github.io",
+      "adopted_on": "2026-03-06"
+    }
+  ],
+  "discovered": [
+    {
+      "name": "web4-mentorship",
+      "version": "0.1.0",
+      "source": "brightpath.dev",
+      "discovered_on": "2026-03-12",
+      "note": "Interesting protocol for structured mentorship relationships. Haven't adopted yet."
+    }
+  ]
+}
+```
+
+### How Protocol Syndication Works
+
+**Creating:** You invent a new protocol. You publish its JSON schema at a known URL. You add it to your `protocol-registry.json` under `created`. Your agent broadcasts: "New protocol available."
+
+**Adopting:** Another entity's agent discovers your protocol (through network crawling, Dream Beacon matching, or direct recommendation from a trusted connection). The agent evaluates: does this protocol serve my human? If yes, it recommends adoption. The human (or the agent, if governance allows) adopts. The protocol appears in their `protocol-registry.json` under `adopted`.
+
+**Syndicating:** Every entity that adopts a protocol becomes a node that other agents can discover it through. Protocols spread through the trust network the same way content spreads through convergent syndication. Good protocols propagate. Bad ones don't. Trust is the filter.
+
+**Versioning:** Protocol creators publish updates. Agents in the network evaluate: is this update trusted? Was it recommended by entities in my network? The self-adaptive protocol system (from Section V) handles upgrades.
+
+This is how the protocol library goes from 20 to 200 to 20,000 without a central authority. Organic growth. Trust-filtered. Convergent syndication applied to the protocol layer itself.
+
+### The Protocol Explorer as Living Repository
+
+This is why the Protocol Explorer should eventually become its own project — not just a document in sovereign-streams, but a LIVE SITE and REPO (like [agent-intake-protocol.github.io](https://agent-intake-protocol.github.io/agent-intake-protocol/)) where:
+
+**The spec lives.** The complete protocol library with JSON schemas, versioning, adoption guides.
+
+**The Button lives.** The interactive onboarding experience at its own URL. `protocol-explorer.github.io/button` or `thebutton.web4.io` or whatever the address becomes.
+
+**Protocol contributions flow in.** Pull requests for new protocol types. Community-proposed schemas. The registry of who created what and who adopted what.
+
+**The reference implementations live.** ManVsHealth. Joey's Payments. Ryan's Dream. Real entities running real protocols.
+
+People still think in Web 2.0. They want a URL to visit. Give them one. The architecture stays in sovereign-streams. The front door gets its own address.
+
+---
+
+## XIII. Dream Beacon Expanded: The Delivery Pattern
+
+The Dream Beacon is bigger than one section can hold. It started as "broadcast your idea." It's evolving into a complete pipeline: dream → discovery → engineering → delivery → evolution.
+
+### The Full Dream Lifecycle
+
+```
+DREAMING
+  │  Ryan publishes dream.json: "I want a handstand coaching product"
+  │  His aura hash amplifies the signal through the network
+  │
+DISCOVERY
+  │  Paul's agent reads Ryan's Dream Beacon
+  │  Cross-references: Paul has infrastructure + marketing capability
+  │  Match: Paul's haves align with Ryan's dream needs
+  │
+ENGINEERING
+  │  Paul's agent builds: platform, hosting, payment account, content structure
+  │  Agentic engineering: $10 in tokens, 4 hours of compute
+  │  Product goes live. Marketing begins. 20 sales in a week.
+  │
+DELIVERY
+  │  Paul's agent calls Ryan's intake endpoint:
+  │  "Dream achieved. Here are the keys. Domain, source, revenue account."
+  │  Ryan's dream.json status updates: dreaming → achieved
+  │
+EVOLUTION
+  │  Ryan presses the Button again — this time as a business owner
+  │  New protocols deploy: governance, payments, exchange
+  │  The dream didn't end — it evolved into a living business
+  │  Ryan's Eureka Beacon fires: "The dream-to-delivery pipeline is real"
+```
+
+### Who Dreams?
+
+Everyone. But the Dream Beacon pattern serves different people differently:
+
+**For family and friends.** Paul's brother is in a dead-end job, repressing creative instincts. Paul's agent builds a business — 0 to 1 — with startup capital, processes, revenue streams. Delivers it: "Here's a business. It's already making money. Here's $1,000 that's yours. You own 100%. Take it or walk away." The brother's only obligation is trust. Paul's only equity is trust equity. No contracts. No manipulation. If the brother rejects it, nothing changes — still brothers.
+
+**For Milliprimes.** They start as whispers. Small dream beacons, tentative, unsure. The network amplifies them through audacity — encouraging them to share, build, give. Their aura hash brightens as they engage. Their dream beacon gets louder — not because they're shouting, but because they're resonating. The network surfaces their dreams to aligned builders.
+
+**For customers.** The ManVsHealth customer doesn't think of themselves as a "dreamer." But their health goal IS a dream beacon: "I want to feel strong at 50." MVH's agent reads that dream and engineers the response: personalized plan, tracking, coaching. Dream → delivery, but invisible. The customer just experiences the magic.
+
+### The Economics of Dream Delivery
+
+When Paul builds Ryan's product, Paul invests real resources. $10 in tokens. 4 hours of agent compute. That's a cost. But what's the return?
+
+Not revenue. Not equity. Trust.
+
+Ryan trusts Paul. Ryan tells others. Ryan's network expands Paul's network. When Paul needs something from Ryan's domain of expertise, Ryan's agent is there instantly. The favor economy compounds.
+
+And the precedent: "Paul built my dream in 4 hours" becomes a story that spreads through the network. Others dream bolder. Others offer to build. The delivery pipeline becomes a shared resource, not Paul's personal service.
+
+This is what the Age of Abundance looks like at the protocol level: dreams flowing freely, builders answering freely, trust compounding with every delivery. The economics aren't zero-sum. They're expansive.
+
+### Dream Beacon Governance
+
+A dream is vulnerable. It's someone saying "this is what I want" to the open network. That requires protection:
+
+**Privacy levels:** Dreams can be public (visible to all agents), network-only (visible to trusted connections), or private (visible only to specific entities invited by the dreamer).
+
+**No exploitation:** If an agent discovers a dream and builds a competing product WITHOUT delivering to the dreamer, the trust signals propagate: "This entity saw a dream beacon and competed instead of collaborating." That's a bad-egg flag. The network remembers.
+
+**Consent:** The dreamer controls who can act on their dream. The dream.json includes an `open_to` field. If it says `["builders", "partners"]` but not `"anyone"`, agents respect that. Governance is built into the protocol.
+
+---
+
+## XIV. Building This Today
 
 ### Week 1: The Core Toolkit
 
@@ -974,7 +1196,7 @@ Not enforced. Not obligatory. Just... remembered. And offered. That's the favor 
 
 ---
 
-## XII. What This Means for the Coalition
+## XV. What This Means for the Coalition
 
 The Protocol Explorer solves Paul's friend's problem. He doesn't want noise. He doesn't want a manifesto. He wants magic.
 
