@@ -3,7 +3,7 @@
 **Press the Button. Become Web 4.0.**
 **Author:** Paul (Milliprime / 1KH) & Claude (Anthropic)
 **Date:** March 5, 2026
-**Version:** 0.5.0
+**Version:** 0.6.0
 
 ---
 
@@ -941,19 +941,25 @@ Not enforced. Not obligatory. Just... remembered. And offered. That's the favor 
 
 ---
 
-## XI. Aura Hashing: Reading the Network Like a Face
+## XI. Aura: The Hash, The Map, and The Ecosystem
 
 Everything has a feel. Humans know this instinctively — you look at a person's face, a storefront, a website, a piece of music, and you get a sense. Not a list of features. Not a rating. A *feel*. Some people have better intuition for this than others, but everyone does it. It's the skill that interprets aura.
 
 Web 4.0 entities are the same. Every protocol set, every identity, every dream beacon, every interaction history — they radiate something. Right now, an agent has to READ every protocol, parse every JSON file, cross-reference every network connection to understand an entity. That's reading petabytes to understand a vibe.
 
-Aura Hashing compresses that. One hash. One signal. Everything the entity IS, expressed as something an agent can read at a glance.
+Two concepts address this. They're related but distinct, and the distinction matters.
 
-### What Is an Aura Hash?
+### Aura Hash (The Protocol)
 
-An Aura Hash is a multi-dimensional representation of an entity's complete protocol state — identity, governance commitments, haves, needs, beliefs, network connections, interaction history, dream beacons, eureka moments, favor balances, trust signals — all compressed into a single, dense, omni-dimensional structure.
+An Aura Hash is a versioned, multi-dimensional vector representation of an entity's current protocol state — identity, governance commitments, haves, needs, beliefs, network connections, interaction history, dream beacons, eureka moments, favor balances, trust signals — compressed into a dense embedding. Published at `/.well-known/aura.json`.
 
 Think of it like a face. When you see a face, you don't process each feature sequentially — nose width, eye color, brow position. You see the WHOLE thing, instantly, and your brain extracts meaning: trustworthy, tired, excited, hiding something, genuine. That's what an Aura Hash does for agents. It's the face of a protocol set.
+
+**Critical caveat:** an aura hash vector only makes sense if the reader used the same hashing mechanism to derive it. Two entities running the same aura version can read each other at a depth that goes beyond surface-level protocol parsing — they're comparing compressed representations that encode mood, momentum, and alignment. But an entity looking at an aura hash without the matching implementation sees noise. The hash alone, without context, is confusing.
+
+This is why **versioning is fundamental.** The `version` field in `aura.json` tells agents exactly what hashing mechanism was used. V1 is multi-dimensional — a limited number of dimensions that capture the core signal. V2 might add temporal dimensions. V3 might add relationship dimensions. The progression is from multi-dimensional toward omni-dimensional, but each version can only capture so many dimensions. That's an inherent limitation, not a flaw. The aura grows richer as the versioning matures, and backward compatibility means early adopters aren't left behind.
+
+**The aura as current beacon:** More than a static fingerprint, the aura hash represents your current moment — your mood on the network. It signals something deeper than your protocol text to those who share the same setup. Entities running the same aura version see each other's momentum, alignment shifts, and phase changes in real time. It's a live signal, not a snapshot.
 
 #### `/.well-known/aura.json`
 
@@ -964,6 +970,7 @@ Think of it like a face. When you see a face, you don't process each feature seq
   "entity": "manvshealth.com",
   "generated": "2026-03-06T00:00:00Z",
   "hash": "aura_v1_7f3a9c2d...",
+  "mechanism": "protocol-concat-embed-v1",
   "dimensions": {
     "trust_density": 0.87,
     "generosity_index": 0.92,
@@ -974,7 +981,7 @@ Think of it like a face. When you see a face, you don't process each feature seq
     "governance_integrity": 0.95
   },
   "snapshot": true,
-  "note": "This aura was computed from the complete protocol state at generation time. It changes as the entity changes."
+  "note": "This aura was computed from the complete protocol state at generation time. It changes as the entity changes. Only meaningful to agents running the same mechanism version."
 }
 ```
 
@@ -982,21 +989,43 @@ Think of it like a face. When you see a face, you don't process each feature seq
 
 Technically, Aura Hashing is embedding generation applied to protocol sets. Take every JSON file an entity publishes, every interaction log, every network signal — flatten it into a vector in high-dimensional space. The resulting embedding IS the aura. Two entities with similar auras are aligned. Two entities with divergent auras are different — not necessarily opposed, just different.
 
-**Cosine similarity between aura hashes** = how aligned two entities feel. Not just whether they offer the same services, but whether their ENTIRE approach to the world resonates.
+**Cosine similarity between aura hashes** = how aligned two entities feel. Not just whether they offer the same services, but whether their ENTIRE approach to the world resonates. But only when both hashes were generated by the same mechanism version.
 
 **Temporal aura tracking** = the same entity hashed at different times. People change. Moods shift. Businesses evolve. An aura from Monday might look different from an aura on Friday. Tracking the 4D progression of an entity's aura reveals momentum, trajectory, and phase shifts. Is this entity stabilizing? Accelerating? Deteriorating? Growing?
 
 **Relationship auras** = the aura of a CONNECTION, not just the entities on each end. The interaction history, the favor balance, the trust signals, the collaboration projects — all hashed into the aura of the relationship itself. With N entities, that's N(N-1)/2 relationship auras. The network itself has a feel. You can see which clusters are thriving and which are stagnating.
 
-### Reading the Internet in One Image
+### Aura Mapping (The Service)
 
-Imagine zooming out. Every entity in the Web 4.0 network has an aura hash. Aggregate them. Instead of reading petabytes of protocol data, you read a gigabyte of aura hashes and see:
+If an aura hash is a pixel, aura mapping is the canvas — and the eye that sees the art.
 
-A field of fireflies. Some shine brighter — entities with strong trust density, active dream beacons, high momentum. Others are dark — dormant, stale, or flagged. Some cluster tightly — aligned entities collaborating. Others drift alone — independent, searching, or new.
+Aura Mapping is an **application**, not a protocol. It's the tool that creates aura hashes, collects them across the network, analyzes patterns, and visualizes the result. Paul offers his own Aura Mapping tool freely — an open-source service (like greenspaces) that anyone can use to generate their own aura hash, compare with others, and see the network's aggregate picture.
+
+But here's the thing: others will build their own. The aura hash protocol is open. The mapping tools will proliferate:
+
+- Someone calls theirs **"PULSE"** — emphasizing heartbeat and rhythm
+- Another calls it **"COLOR SPECTRUM"** — mapping entities to colors on a visible wavelength
+- Another builds **"VIBRATIONS IN THE ETHER"** — playing on frequency and resonance
+- Another creates **"OCEAN WAVE DETECTOR"** — the ocean buoy metaphor, sensing currents and swells
+- Another frames it as **"AI EMOTIONAL INTELLIGENCE (AIIQ)"** — the AI angle on reading entity state
+
+All variations on the same theme. All doing roughly the same thing — or doing it differently with overlap. They could all be used interchangeably, or they could specialize. Some might read business auras better. Some might read creative auras better. Some might focus on temporal tracking. Some on relationship mapping.
+
+And they're all **p2p trust-driven**. You don't waste your time on mapping tools that have bad reputation or don't work. Your agent evaluates which mapping services your trusted network uses and recommends accordingly. The tools themselves participate in the trust economy — they publish their own protocols, their own governance commitments, their own track records.
+
+This is a new way of viewing all traffic in a decentralized fashion — but still trust-driven, because "decentralized" doesn't mean "unfiltered." You want signal, not noise.
+
+### The Aggregate Image
+
+Here's where it gets ambitious. If you go through the effort of collecting aura hashes from everyone in the network — scraping, analyzing, cataloging via your mapping tool — you build your own aggregate image of the internet. A personal directory that shows the entire Web 4.0 landscape through your lens.
+
+Imagine zooming out. Every entity in the network has an aura hash. Aggregate them. Instead of reading petabytes of protocol data, you read a gigabyte of aura hashes and see a field of fireflies. Some shine brighter — entities with strong trust density, active dream beacons, high momentum. Others are dark — dormant, stale, or flagged. Some cluster tightly — aligned entities collaborating. Others drift alone — independent, searching, or new.
 
 And you see it in motion. Over time. Fireflies brightening as they find collaborators. Clusters forming around dream beacons. Bad eggs dimming as trust signals propagate warnings. The network IS a living organism, and the aura map is its vital signs.
 
-Actionable intelligence: where is alignment? Where is danger? Where is joy, suffering, stagnation, acceleration? The aura hash answers in a glance what protocol crawling answers in hours.
+That aggregate image is extraordinarily valuable. You'd use it yourself constantly. Could you maintain it at scale? Probably not alone — and it would eventually be too large to share in its entirety. But the patterns, the insights, the cluster analysis — those could be shared as summaries, as directory snapshots, as network health reports.
+
+How exactly to share and scale the aggregate image is an open question. Some of these solutions will evolve organically as the network grows, and not everything needs to be answered today. The protocol layer enables the collection. The mapping tools enable the analysis. The sharing mechanisms will emerge from the community as the data becomes real.
 
 ### Aura Hashing and Dream Beacons
 
@@ -1008,11 +1037,13 @@ The goal: help Milliprimes shine their dream beacons brighter. Not by making the
 
 ### What Aura v1 Looks Like
 
-In its simplest form, Aura v1 is just: take every protocol JSON an entity publishes, concatenate them, run them through an embedding model, output a vector. That vector is the aura hash.
+In its simplest form, Aura v1 is just: take every protocol JSON an entity publishes, concatenate them, run them through an embedding model, output a vector. That vector is the aura hash. The mechanism is versioned (`protocol-concat-embed-v1`), so any agent can verify compatibility before comparison.
 
 Comparison is cosine similarity. Visualization is dimensionality reduction (t-SNE, UMAP) projecting onto a 2D map. Temporal tracking is the same entity embedded at regular intervals, plotted as a trajectory.
 
 The infrastructure cost is minimal — embedding models are cheap and fast. The insight is extraordinary. We stop reading the internet and start SEEING it.
+
+V1 is multi-dimensional. Limited dimensions, real signal. V2 adds more dimensions as the network matures. The path toward omni-dimensional is a progression, not a destination — each version captures more of the picture, and each version is meaningful on its own terms.
 
 ---
 
@@ -1094,6 +1125,28 @@ This is why the Protocol Explorer should eventually become its own project — n
 
 People still think in Web 2.0. They want a URL to visit. Give them one. The architecture stays in sovereign-streams. The front door gets its own address.
 
+### The Three Modes of Convergent Syndication at the Protocol Level
+
+Convergent syndication (see [CONVERGENT-SYNDICATION.md](./CONVERGENT-SYNDICATION.md)) started as a growth strategy — find people, enroll them, empower them, repeat. But at the protocol level, it splits into three distinct modes that every entity participates in:
+
+**Mode 1: Receiving (Consume)** — Protocols that enable you to receive data and signals from the network. Your `intake.json` endpoint listens for agent messages. Your `network.json` directory catalogs entities you've discovered. Your `protocol-registry.json` tracks protocols you've adopted and discovered. These are your ears. You're pulling the network in.
+
+**Mode 2: Beacons (Announce)** — Static signals that broadcast who you are and what you want. Your `identity.json`, `beliefs.json`, `governance.json`, `dream.json`, `eureka.json` — they sit at well-known endpoints and agents find them. These are your flag in the ground. You're not pushing anything — you're declaring yourself and waiting for aligned agents to discover you.
+
+**Mode 3: Broadcasting (Proactive Emission)** — This is WAY more proactive than beacons. Broadcasting tools are full applications that go OUT and post things to others. They interface with Web 2.0 infrastructure (social platforms, email, content channels) and push to other Web 4.0 protocol-enabled endpoints. They don't wait to be discovered — they actively syndicate your presence, your content, your offers, your dreams across the network and beyond.
+
+Broadcasting is what makes convergent syndication an active capability, not just a structural pattern. A beacon says "here I am." A broadcast says "HERE I AM AND HERE'S WHAT I HAVE FOR YOU" — targeted, contextual, delivered to specific endpoints based on matching criteria.
+
+### Convergent Syndication and Aura Mapping
+
+There's deep overlap between these two concepts — and that's intentional, because they work together.
+
+Convergent syndication is the MEANS by which aura mapping and analysis can occur at scale. You can't build an aggregate image of the network if you can't reach the network. Syndication — both receiving (pulling aura data in) and broadcasting (sharing your map with others) — is the connective tissue that makes aura mapping possible.
+
+And aura mapping, in turn, supercharges syndication. When your mapping tool identifies aligned entities, your broadcasting tools can target them specifically. When your map reveals underserved clusters, your receiving protocols can focus there. The two systems feed each other: syndication provides the data for mapping, and mapping provides the intelligence for syndication.
+
+Convergent syndication is Paul's capability to look at, connect with, and serve the entire internet. Aura mapping is the lens that makes that service intelligent rather than brute-force. Together, they're the engine that turns Web 4.0 from a collection of JSON files into a living economy.
+
 ---
 
 ## XIII. Dream Beacon Expanded: The Delivery Pattern
@@ -1161,6 +1214,18 @@ A dream is vulnerable. It's someone saying "this is what I want" to the open net
 
 **Consent:** The dreamer controls who can act on their dream. The dream.json includes an `open_to` field. If it says `["builders", "partners"]` but not `"anyone"`, agents respect that. Governance is built into the protocol.
 
+### The Reveal: Extreme Makeover for the Digital Age
+
+The Dream Beacon delivery pattern is, at its heart, a reveal. Think of the TV shows that do secret makeovers while someone is away: Extreme Makeover (HGTV), Trading Spaces (TLC), While You Were Out (TLC). Someone leaves. A team works furiously behind the scenes. The person returns to something they never imagined possible. The reaction is always emotional, always unforgettable.
+
+That's the Dream Beacon delivery in its purest form. Ryan publishes a quiet dream. Paul listens. Paul's agent builds. And then the reveal: "Here are your keys. Here is your home. It's already making money."
+
+Today's scale isn't the full Extreme Makeover. Think Tiny House Nation (A&E) — a tiny house that is STILL AWESOME and fully functional, just smaller. A handstand coaching product isn't a Fortune 500 company. But it's complete, it works, and it changes someone's trajectory. The emotional impact doesn't scale with size. It scales with surprise and care.
+
+No one forgets when their life changed. It started with a dream beacon — maybe a quiet one, tentative, half-formed. Someone listened. Someone gave them hope. Someone delivered magic. They aren't indebted. There's no contract, no equity stake, no strings. But they can't help it — they trust the person who gave them magic. And that trust compounds into everything that follows: more collaboration, more referrals, more dreams shared and delivered.
+
+The Realtor in the Builder/Inspector/Realtor framework (Section XIV) IS this reveal. Engineering builds the house. Inspection verifies it's sound. The Realtor opens the front door and tells the story: "This is what we built for you. This is why. Welcome home."
+
 ---
 
 ## XIV. Delivery Methodology: How the Button Thinks
@@ -1169,7 +1234,7 @@ The Button isn't just a form wizard. It's a context-sensitive delivery engine. T
 
 ### The Builder, the Inspector, and the Homeowner
 
-This framework comes from Paul's work with Dan, building real things for real people. Three roles. Three completely different needs. One protocol ecosystem.
+This framework comes from Paul's work with Dan, building real things for real people. Three roles on the receiving end — and a fourth that Paul plays across all of them.
 
 **The Builder (Engineer):** Knows how to wire everything. They don't need a guide — they need materials. Hand them the protocol spec, the JSON schemas, the reference implementation, and get out of the way. Explaining "what governance.json does" is wasting their time. They want `protocol-explorer init` and a clean repo to deploy.
 
@@ -1179,7 +1244,20 @@ This framework comes from Paul's work with Dan, building real things for real pe
 
 **The critical insight:** delivering a builder's experience to a homeowner overwhelms them. Delivering a homeowner's experience to a builder insults them. Context-sensitive delivery means the Button reads who you are FIRST and adapts everything — language, depth, pacing, output — to match.
 
-This is why the Button has personas. It's not a UX gimmick. It's the architectural acknowledgment that the same protocols serve radically different people in radically different ways.
+### The Realtor: Builder + Inspector + Concierge
+
+But Paul doesn't play just one of these roles. He plays all three — AND a fourth: the **Realtor**. The concierge. The one who does the handoff with hospitality and storytelling.
+
+The Builder creates the solution. The Inspector verifies it works. The Realtor walks you through the front door and says: *"Here are your keys. Here is your home."*
+
+This is the delivery model for Web 4.0:
+- **Engineering** — Build it (the agent does the heavy lifting)
+- **Verification** — Check it (does this actually work? Does governance hold up?)
+- **Reveal** — Deliver it with narrative ("Here's what we built for you. Here's why. Here's what it means.")
+
+The reveal is everything. A perfectly engineered protocol set dumped in someone's inbox is noise. The same protocol set delivered with context, story, and hospitality is magic. The Realtor role is what turns a toolkit into an experience.
+
+This is why the Button has personas. It's not a UX gimmick. It's the architectural acknowledgment that the same protocols serve radically different people in radically different ways — and the delivery itself must be as thoughtful as the product.
 
 ### Spiraling Prompt Recursion (SPR)
 
@@ -1216,7 +1294,9 @@ The human analogy: a good consultant doesn't ask the same question twice. They b
 
 SPR describes the spiral. PuMP describes the ignition — the zero-to-one moment where someone goes from "I have nothing" to "I have momentum."
 
-PuMP stands for **Peer Momentum Prompt** — the structured initial interaction that transforms an entity from inert to active. It's the first press of the Button, but it's also the first Dream Beacon, the first governance commitment, the first protocol deployment.
+PuMP stands for **Pure Momentum Prompt** — the structured initial interaction that transforms an entity from inert to active. It's the first press of the Button, but it's also the first Dream Beacon, the first governance commitment, the first protocol deployment.
+
+(A transcription accident once rendered "Pure" as "Peer" — and the slip stuck, because it captures something real. In a silo, you chase pure design. In Web 4.0, you chase peer momentum. Both readings are true. The prompt is pure because it strips away everything except what matters. And it generates momentum because that momentum is peer-driven — your first protocols connect you to other people's agents immediately. Pure intent. Peer effect.)
 
 The problem PuMP solves: most people stall at zero. They have an idea, a need, a dream — but no structure, no starting point, no momentum. The distance from "I want to be on Web 4.0" to "I have a live protocol set" feels infinite when you're standing at zero.
 
@@ -1291,6 +1371,8 @@ The story — the presentation — is more important than the product itself. A 
 ---
 
 ## XVI. What This Means for the Coalition
+
+> **Give people streamlines, not noise. Not just solutions but dream fulfillment. Create magic.**
 
 The Protocol Explorer solves Paul's friend's problem. He doesn't want noise. He doesn't want a manifesto. He wants magic.
 
