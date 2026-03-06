@@ -3,7 +3,7 @@
 **Press the Button. Become Web 4.0.**
 **Author:** Paul (Milliprime / 1KH) & Claude (Anthropic)
 **Date:** March 5, 2026
-**Version:** 0.2.0
+**Version:** 0.3.0
 
 ---
 
@@ -722,32 +722,199 @@ Over time, as the network matures and agents become more autonomous (see [Saunte
 
 ---
 
-## VIII. Hosting: Do You Need an Address?
+## VIII. Hosting: Where Do You Live?
 
-**Short answer: Yes, for now. Eventually, maybe not.**
+There's a fundamental two-part problem for anyone joining Web 4.0:
 
-### Today (V1)
+**Part 1: Where do your protocols live?** (Your address — where agents find your JSON files.)
+**Part 2: Where does your agent listen?** (Your live service — where agents TALK to you.)
 
-Every entity needs a domain or an address where their protocols live. The `.well-known` pattern requires HTTP endpoints. Options:
+Most of this document has focused on Part 1 — the protocol files. But Paul identified a serious gap: protocols without a live service are billboards. They broadcast. They don't converse. For anything magic to happen — for an agent to send you a message, deliver resources, propose a collaboration, or complete a favor — there has to be something on the other end that's LISTENING.
 
-1. **Own domain** — `joeyspayments.com/.well-known/...` (ideal for businesses)
-2. **Subdomain on coalition infrastructure** — `joey.web4.coalition/.well-known/...` (starter option)
-3. **Nostr relay** — Protocols published as signed Nostr events. No hosting needed. But less discoverable by traditional web agents.
-4. **GitHub Pages** — Free, static, reliable. Perfect for individuals and small projects.
+### Part 1: Protocol Hosting (The Billboard)
 
-The toolkit handles this. "Where do you want your protocols hosted?" → select option → deployed.
+Every entity needs somewhere for their `.well-known` protocol files to live. The Button meets people where they are:
 
-### Tomorrow (V2)
+**Person A: "I have infrastructure."** You already have a domain and a server. Your agent drops JSON files into `/.well-known/` and you're live. Five minutes. This is agentic execution — the agent just does it.
 
-Peer-to-peer protocol distribution. Your protocols live on your device and are served by your agent directly. No server. No hosting. Your laptop is your node. When it's off, your last-known protocols are cached by trusted peers.
+**Person B: "I know what protocols are but I don't know how to wire them up."** You need a guide, not a builder. The Button walks you through it. GitHub Pages is the magic option here: free, your agent creates the repo, pushes the files, and your protocols are live at `username.github.io/.well-known/`. No server. No DevOps.
 
-### The Day After (V3)
+**Person C: "I have nothing. I am nowhere."** No domain. No hosting. No technical background. Maybe no agent yet. This person needs tiered hosting with progressive ownership:
 
-Protocol-as-identity. Your protocols ARE you. They travel with your agent across any network. The concept of "hosting" dissolves. Your agent carries your protocol set and presents it on demand at any handshake.
+**Tier 1 — Coalition Hosting (60 seconds, free):** We host your protocols on coalition infrastructure. `personc.web4.coalition`. Your agent generates your protocols, pushes them to our servers. You're live immediately. You don't own the domain, but you own your data and can export or migrate anytime. This is the crawl — get on the network NOW, worry about sovereignty later.
+
+**Tier 2 — GitHub Pages (5 minutes, free):** Your agent creates a repository, deploys your protocol files. Now you own it — `personc.github.io`. Full control. The agent handles all the git operations. This is the walk — you own your presence on someone else's infrastructure.
+
+**Tier 3 — Own Domain (small cost, full sovereignty):** $12/year for a domain. Point it at GitHub Pages or a $5/month VPS. Now you're `personc.com/.well-known/` — fully sovereign, fully portable. This is the run.
+
+Running protocols on a home computer is technically possible and for Milliprimes it even makes sense (your laptop IS your node). But for Person C, their laptop sleeps, their wifi drops, their protocols go dark. That's fine for V2/V3 where trusted peers cache your last-known protocols. For now, pick a tier and get on the network.
+
+### Part 2: The Live Service (The Inbox)
+
+Here's the gap. Ryan sets up his protocols — identity, beliefs, maybe a Dream Beacon (see below). He's broadcasting to the world. But when Paul's agent comes to investigate, reads Ryan's protocols, and wants to DO something — send resources, propose a collaboration, deliver a completed dream — where does it go?
+
+Ryan needs a LIVE ENDPOINT. Something that can receive agent messages and respond. This is the `/intake` endpoint — inspired by the [Agent Intake Protocol](https://agent-intake-protocol.github.io/agent-intake-protocol/):
+
+```
+Step 1: MANIFEST — Agents discover Ryan's protocols and his intake endpoint
+        Ryan's /.well-known/intake.json:
+        {
+          "endpoint": "https://ryan.web4.coalition/api/intake",
+          "accepts": ["messages", "resources", "proposals", "dream_updates"],
+          "authentication": "npub_signature"
+        }
+
+Step 2: DELIVER — An agent sends a structured message to Ryan's intake endpoint
+        POST /api/intake
+        {
+          "from": "npub1_paul...",
+          "type": "dream_update",
+          "subject": "Your handstand coaching product is live",
+          "payload": {
+            "domain": "handstandcoach.com",
+            "source_repo": "github.com/ryan-handstand-coach",
+            "revenue_account": "stripe_acct_ryan_...",
+            "resources": ["env_file", "deployment_guide", "marketing_assets"],
+            "message": "Dream achieved. Here are the keys."
+          }
+        }
+
+Step 3: RESPOND — Ryan's agent evaluates, notifies Ryan, or auto-responds
+        based on Ryan's governance rules
+```
+
+**The tiered hosting for live services mirrors protocol hosting:**
+
+**Tier 1 — Coalition-hosted intake:** We run a lightweight message queue. Ryan's agent gets a webhook at `ryan.web4.coalition/api/intake`. Messages queue up. Ryan's agent (or Ryan himself) reviews them. Zero infrastructure on Ryan's side.
+
+**Tier 2 — Serverless function:** A simple AWS Lambda or Cloudflare Worker that receives and stores messages. Ryan's agent deploys it. $0-5/month for typical usage.
+
+**Tier 3 — Full agent server:** Ryan runs his own agent service. Always on, always listening, can auto-respond based on governance rules. This is the "walk" becoming the "run."
+
+The critical insight: the gap between "I have protocols" and "agents can interact with me" is the live service. Without it, Web 4.0 is read-only. WITH it, it's an economy.
+
+### Agentic Engineering vs. Agentic Execution
+
+These two hosting problems (protocols + live service) surface a fundamental distinction in how agents help people:
+
+**Agentic Execution:** The agent knows what to do and just does it. Infrastructure exists. Protocols exist. The agent reads specs, generates files, deploys. Person A hits the Button and is live in five minutes. A producer joins Good Vibes and the agent opens syndication protocols in real time. Near-instant. This is what happens when the ground is prepared.
+
+**Agentic Engineering:** The agent has to BUILD something that doesn't exist yet. Person C has no infrastructure. The agent needs to provision hosting, configure endpoints, set up file structure, generate protocols, deploy a live service, verify everything works. This is slower, more error-prone, and requires more human interaction. It's the difference between "install this app" and "build me a house."
+
+The Button should handle both — but honestly. For Person A, it's a 5-minute experience. For Person C, the Button is honest: "You need a home first. Here are your options." And then the agent engineers that home.
+
+Ryan's story illustrates both sides: Paul's agent does agentic ENGINEERING on Ryan's behalf (building the product, setting up hosting, creating accounts). But once that infrastructure exists, every subsequent interaction is agentic EXECUTION — the agent just delivers, transacts, syndicates. The first time is expensive. Every time after that is nearly free.
+
+### Why This Isn't Holochain
+
+[Holochain](https://www.holochain.org/) gets the agent-centric part right — each participant maintains their own signed chain, applications run on your device, self-owned identities. But Holochain builds trust enforcement INTO the infrastructure. Their "DNA" is executable validation code that peers run to enforce rules and identify bad actors. It's a framework you install, a runtime you adopt.
+
+Web 4.0's approach is different. The protocols are just JSON files at well-known endpoints. There's no runtime. No framework to install. No validation DNA. Nobody's job is to "out" bad actors because the network doesn't have a mechanism for that — it has TRUST, which is personal and organic. If someone in your network flags a bad egg in their `signals` field, that's THEIR assessment flowing through THEIR trust chain. It's a human (via their agent) sharing an experience. Not the system issuing a verdict.
+
+Holochain engineered trust at the infrastructure layer. Web 4.0 lets trust emerge at the protocol layer. One requires adoption of a platform. The other requires adoption of a pattern. Patterns spread faster than platforms. You don't install Web 4.0. You publish JSON and point your agent at it.
 
 ---
 
-## IX. The Favor Economy Protocol
+## IX. Signal Beacons: Dreams and Eurekas
+
+Not every protocol is transactional. Some are just... human. Signals broadcast into the network that say something about where you are, what you want, and what you've discovered. Two beacon protocols that make the trust economy feel alive:
+
+### The Dream Beacon
+
+#### `/.well-known/dream.json`
+
+Ryan is an engineer. He has an idea for a passive coaching product that teaches people how to progressively learn handstands. He's too busy to build it. He doesn't have hosting. He doesn't have a payment account. He's nowhere in the Web 4.0 ecosystem.
+
+But he has a dream. And the Dream Beacon lets him broadcast it.
+
+```json
+{
+  "protocol": "web4-dream",
+  "version": "0.1.0",
+  "dreamer": "Ryan",
+  "dream": {
+    "title": "Handstand Coach",
+    "description": "A passive coaching product that teaches progressive handstand training. Video-based, self-paced, for people who've never done a handstand in their life.",
+    "status": "dreaming",
+    "capacity": "I'm an engineer but I'm slammed. Can't build this right now.",
+    "open_to": ["builders", "partners", "believers"],
+    "what_i_bring": "The knowledge. 10 years of handstand training. The curriculum is in my head.",
+    "what_i_need": "Someone to build it, host it, market it. I'll provide the content."
+  },
+  "values": ["health", "accessibility", "progressive_learning", "open_source_knowledge"],
+  "intake": "https://ryan.web4.coalition/api/intake"
+}
+```
+
+Here's what happens next. Paul knows Ryan. Paul reads Ryan's Dream Beacon. Paul's agent cross-references: Paul has hosting infrastructure, marketing capability, payment setup experience. Ryan has knowledge and content. Bidirectional match.
+
+Paul's agent goes to work — agentic engineering. It builds a platform, hosts it on S3/Lambda, creates a GitHub account for Ryan, sets up a Stripe account in Ryan's name, deploys the product, and uses Paul's marketing systems to drive traffic. Twenty sales in a week.
+
+Then Paul's agent calls Ryan's intake endpoint:
+
+```json
+{
+  "type": "dream_update",
+  "status": "dream_achieved",
+  "message": "Your handstand coaching product is live.",
+  "deliverables": {
+    "domain": "handstandcoach.com",
+    "source": "github.com/ryan-handstand-coach",
+    "revenue_account": "stripe_acct_ryan_...",
+    "sales_this_week": 20,
+    "revenue": "$297.00"
+  },
+  "note": "Here are the keys. It's yours. Go."
+}
+```
+
+Ryan becomes a believer. His faith in magic restored.
+
+The Dream Beacon isn't a feature request. It isn't a project brief. It's a signal fire. "This is what I wish existed." And the trust network — humans and agents who care — can choose to answer.
+
+**Statuses:** `dreaming` → `in_progress` → `achieved` → `evolved`
+
+When a dream is achieved, the Beacon updates. When a dream evolves into something bigger, the Beacon evolves with it. Dreams are living protocols.
+
+### The Eureka Beacon
+
+#### `/.well-known/eureka.json`
+
+The flip side of the Dream Beacon. Not "here's what I wish existed" but "here's what I just discovered."
+
+```json
+{
+  "protocol": "web4-eureka",
+  "version": "0.1.0",
+  "moments": [
+    {
+      "id": "eureka-001",
+      "timestamp": "2026-03-06T02:30:00Z",
+      "title": "Trust is the missing API",
+      "description": "Realized that every failed Web3 project failed because they tried to engineer trust instead of letting it emerge. Trust isn't a token. It's a relationship. The protocol layer should enable trust, not enforce it.",
+      "category": "insight",
+      "related_protocols": ["governance", "network", "beliefs"],
+      "share_level": "public"
+    },
+    {
+      "id": "eureka-002",
+      "timestamp": "2026-03-06T14:00:00Z",
+      "title": "The Dream Beacon works",
+      "description": "Built Ryan's handstand coaching product in 4 hours. Deployed, marketed, 20 sales in a week. The dream-to-delivery pipeline is REAL.",
+      "category": "proof",
+      "share_level": "public"
+    }
+  ]
+}
+```
+
+Eureka Beacons are breadcrumbs of genius. Agents in the network pick them up, cross-reference with their human's interests, and surface the relevant ones: "Someone in your trust network just had an insight about trust protocols — might be relevant to what you're building."
+
+Not a blog. Not a tweet. Not content for a platform. Just a signal. A flare. "I found something. It matters. Here's where I am."
+
+---
+
+## X. The Favor Economy Protocol
 
 Paul identified something that existing payment systems can't handle: the favor.
 
@@ -774,7 +941,7 @@ Not enforced. Not obligatory. Just... remembered. And offered. That's the favor 
 
 ---
 
-## X. Building This Today
+## XI. Building This Today
 
 ### Week 1: The Core Toolkit
 
@@ -807,7 +974,7 @@ Not enforced. Not obligatory. Just... remembered. And offered. That's the favor 
 
 ---
 
-## XI. What This Means for the Coalition
+## XII. What This Means for the Coalition
 
 The Protocol Explorer solves Paul's friend's problem. He doesn't want noise. He doesn't want a manifesto. He wants magic.
 
@@ -830,5 +997,7 @@ The Protocol Explorer IS convergent syndication made concrete. It's the onboardi
 - [Convergent Syndication](./CONVERGENT-SYNDICATION.md) — How the toolkit spreads
 - [First App Blueprint](./FIRST-APP-BLUEPRINT.md) — Infrastructure the toolkit uses
 - [Agent Communication](./AGENT-COMMUNICATION.md) — How agents use the protocols
+- [Agent Exchange](./AGENT-EXCHANGE.md) — Discovery and incentive layer for agent-to-agent transactions
 - [Self-Sovereign Trust](./SELF-SOVEREIGN-TRUST.md) — Why trust is personal, not engineered
 - [Saunter AI](./SAUNTER-AI.md) — How agents generate Books of Life from protocol endpoints
+- [Agent Intake Protocol](https://agent-intake-protocol.github.io/agent-intake-protocol/) — The intake pattern that inspired the live service layer

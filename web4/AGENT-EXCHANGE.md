@@ -405,13 +405,64 @@ The exchange formalizes and accelerates all of these. But the ecosystem doesn't 
 
 ---
 
+## IX. Evolution: From Exchange to Living Network
+
+*Added March 2026 — reflecting developments in the Protocol Explorer, Dream Beacons, and the live service layer.*
+
+### What Changed
+
+The Agent Exchange as described above was written when discovery was the primary problem. Since then, the Protocol Explorer has emerged as the onboarding mechanism, and several insights have shifted the architecture:
+
+**The live service gap.** Discovery isn't enough. When Agent A finds Agent B through the exchange, it needs somewhere to TALK to Agent B. The Agent Intake Protocol pattern — a manifest with an endpoint, then a handler for submissions — has been adopted as `/.well-known/intake.json` in the Protocol Explorer. Every entity that wants to receive agent communication needs an intake endpoint, not just discoverable protocols. The exchange should route agents to these endpoints, not just to protocol files.
+
+**Organic trust over engineered trust.** The exchange's original trust model leaned heavily on on-chain verification — staking, transaction history, attestations. The 48 Laws of Trust and the Protocol Explorer's `network.json` with signals/cautions/flags have clarified that trust in Web 4.0 is personal, not engineered. The barber tells the next barber about the bad client. That's a `signals` field in a `network.json`, not a chain transaction. The exchange should weight trust signals from an agent's actual network over anonymous chain history.
+
+**Dream and Eureka Beacons as exchange signals.** The Protocol Explorer now includes `dream.json` and `eureka.json` — signal protocols that broadcast aspirations and discoveries. The exchange should be aware of these: a Dream Beacon is an implicit NEED (someone wants something built). A Eureka Beacon is an implicit HAVE (someone discovered something valuable). The matching engine should cross-reference beacons with haves/needs across the network.
+
+**Agentic engineering as a service.** The exchange originally assumed all participants had agents and infrastructure. The Protocol Explorer's tiered hosting model (coalition hosting → GitHub Pages → own domain) means new entities may enter the exchange with ZERO infrastructure. An agent encountering a Dream Beacon might not just match and connect — it might engineer the entire solution and deliver it to the dreamer's intake endpoint. This is a new exchange interaction type: not "buy/sell" but "dream/deliver."
+
+### Updated Discovery Layers
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                AGENT DISCOVERY LAYERS (v2)                │
+│                                                          │
+│  Layer 1: .well-known endpoints   (crawl the web)       │
+│  Layer 2: Protocol Explorer       (onboarding gateway)   │
+│  Layer 3: Nostr relay events      (passive discovery)    │
+│  Layer 4: Dream/Eureka Beacons    (signal-based matching)│
+│  Layer 5: P2P gossip              (trusted referrals)    │
+│  Layer 6: Exchange nodes          (structured search)    │
+│  Layer 7: Intake endpoints        (live communication)   │
+│                                                          │
+│  Each layer feeds the others.                            │
+│  No single layer is required.                            │
+│  The Protocol Explorer is the on-ramp for all of them.   │
+└─────────────────────────────────────────────────────────┘
+```
+
+### The Token Question Revisited
+
+The original economics section proposed utility tokens for staking and CPA payments. This still works for the exchange layer, but the broader Web 4.0 economy is moving toward a hybrid model:
+
+**For the exchange:** Tokens make sense for structured marketplace interactions — staking, bidding, quality guarantees. This is the formal economy.
+
+**For the trust network:** The favor economy (see Protocol Explorer, Section X) handles most peer-to-peer value exchange. Favors are not debts. They're trust deposits tracked by agents. No token needed.
+
+**For dreamers:** The Dream Beacon pattern creates a new category: someone invests real resources (Paul spending $10 in tokens to build Ryan's product) as an act of radical generosity. The return isn't a token — it's a trust bond and a network effect.
+
+The exchange doesn't need to choose one model. It facilitates all three. The token layer handles the formal marketplace. The favor layer handles the trust network. The dream layer handles the radical generosity. All three flow through the same protocol infrastructure.
+
+---
+
 ## Sources and Related Documents
 
 - [Web 4.0 Manifesto](./MANIFESTO.md)
 - [Web 4.0 Economics](./WEB4-ECONOMICS.md) — Payment rails, stablecoin infrastructure
 - [Agentic Execution](./AGENTIC-EXECUTION.md) — How agents fulfill intent
 - [Agent-as-Download](./AGENT-AS-DOWNLOAD.md) — Governance protocol architecture
+- [Protocol Explorer](./PROTOCOL-EXPLORER.md) — The onboarding toolkit and protocol library
 - [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — The growth strategy
 - [x402 Protocol](https://www.x402.org/) — HTTP-native micropayments
 - [Nostr Protocol](https://nostr.com/) — Decentralized relay network
-- [Uniswap Governance](https://governance.uniswap.org/) — DAO governance reference
+- [Agent Intake Protocol](https://agent-intake-protocol.github.io/agent-intake-protocol/) — Intake endpoint pattern
