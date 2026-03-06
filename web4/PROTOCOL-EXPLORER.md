@@ -3,7 +3,7 @@
 **Press the Button. Become Web 4.0.**
 **Author:** Paul (Milliprime / 1KH) & Claude (Anthropic)
 **Date:** March 5, 2026
-**Version:** 0.4.0
+**Version:** 0.5.0
 
 ---
 
@@ -1163,7 +1163,101 @@ A dream is vulnerable. It's someone saying "this is what I want" to the open net
 
 ---
 
-## XIV. Building This Today
+## XIV. Delivery Methodology: How the Button Thinks
+
+The Button isn't just a form wizard. It's a context-sensitive delivery engine. Three concepts drive how it adapts to whoever presses it.
+
+### The Builder, the Inspector, and the Homeowner
+
+This framework comes from Paul's work with Dan, building real things for real people. Three roles. Three completely different needs. One protocol ecosystem.
+
+**The Builder (Engineer):** Knows how to wire everything. They don't need a guide — they need materials. Hand them the protocol spec, the JSON schemas, the reference implementation, and get out of the way. Explaining "what governance.json does" is wasting their time. They want `protocol-explorer init` and a clean repo to deploy.
+
+**The Home Inspector (Fractional CTO / Consultant):** Knows what good looks like but doesn't want to build it themselves. They need the WHY. They need the architecture doc, the manifesto, the Laws of Trust. They evaluate, advise, recommend. They're looking at your protocols thinking "does this entity's governance hold up? Are these commitments real?" Give them depth. Give them the reasoning behind the decisions. They're the ones who'll recommend Web 4.0 to their clients.
+
+**The Homeowner (Client / Customer / Person C):** Doesn't care about the wiring. Doesn't care about the inspection report. They care about results. "Does this work? Can I use it? What does it feel like?" The homeowner wants to press the Button and have magic happen. They don't need to know that their protocols are JSON files at `.well-known/` endpoints — they need to know that their business is now discoverable, their agent is listening, and their dreams are being broadcast.
+
+**The critical insight:** delivering a builder's experience to a homeowner overwhelms them. Delivering a homeowner's experience to a builder insults them. Context-sensitive delivery means the Button reads who you are FIRST and adapts everything — language, depth, pacing, output — to match.
+
+This is why the Button has personas. It's not a UX gimmick. It's the architectural acknowledgment that the same protocols serve radically different people in radically different ways.
+
+### Spiraling Prompt Recursion (SPR)
+
+The Button's interaction model isn't a straight line — it's a spiral. Each step compresses context from the previous step and feeds it forward, getting denser and more personalized with each turn.
+
+```
+Press 1: "Who are you?"
+  → Persona selected. Context established.
+  → Compressed: { role: "business", sector: "health" }
+
+Press 2: "What do you need?"
+  → Contextual questions based on persona.
+  → Compressed: { role: "business", sector: "health",
+                   needs: ["hosting", "payments", "governance"],
+                   has: ["content", "expertise"] }
+
+Press 3: "Here's your starter kit."
+  → Protocols generated from compressed context.
+  → Each protocol is already personalized.
+
+Press 4: "Here's how MVH does it."
+  → Reference implementation shown in context.
+  → Not generic. Filtered to the protocols THEY just generated.
+  → Side-by-side: "Yours" vs "A real business."
+```
+
+Each loop compacts the previous output into a denser input. The questions get more specific. The protocols get more personalized. The experience spirals toward an inevitable conclusion: "You're ready. Deploy."
+
+SPR isn't unique to the Button. It's the pattern agents use in every interaction — intake interviews, dream delivery, protocol negotiation. Each exchange compresses context. Each response is more targeted. The conversation converges toward resolution.
+
+The human analogy: a good consultant doesn't ask the same question twice. They build on what they've already learned. Every question implicitly carries the context of every previous answer. That's SPR — spiraling tighter until the answer is obvious.
+
+### PuMP: The Peer Momentum Prompt
+
+SPR describes the spiral. PuMP describes the ignition — the zero-to-one moment where someone goes from "I have nothing" to "I have momentum."
+
+PuMP stands for **Peer Momentum Prompt** — the structured initial interaction that transforms an entity from inert to active. It's the first press of the Button, but it's also the first Dream Beacon, the first governance commitment, the first protocol deployment.
+
+The problem PuMP solves: most people stall at zero. They have an idea, a need, a dream — but no structure, no starting point, no momentum. The distance from "I want to be on Web 4.0" to "I have a live protocol set" feels infinite when you're standing at zero.
+
+PuMP collapses that distance. It's a structured prompt — delivered by the Button, by an agent, by a Milliprime — that asks exactly the right questions to generate the first protocol set. Not all of them. Just enough to create momentum.
+
+```
+PuMP Output (minimum viable protocol set):
+  ✓ identity.json   — You exist. The network can see you.
+  ✓ beliefs.json     — You stand for something.
+  ✓ governance.json  — You've made a commitment.
+  = momentum. You're no longer at zero. You're a node.
+```
+
+The rest — haves, needs, payments, network, dream beacons — come AFTER momentum. You don't ask someone to describe their dream when they're still figuring out how to stand up. PuMP gets them standing. SPR gets them running.
+
+**PuMP for different contexts:**
+- **Button press:** The initial onboarding. PuMP generates the first 3 protocols.
+- **Dream delivery:** When Paul builds for Ryan, PuMP is the initial prompt: "Tell me about your dream." That one question generates the entire dream.json.
+- **Agent negotiation:** Two agents meeting for the first time. PuMP is the handshake: exchange identity, share governance, establish trust baseline. Everything else flows from that first structured exchange.
+
+### The Enrichment Layer
+
+After PuMP creates momentum and SPR begins spiraling, there's one more piece: the enrichment layer. This is where the magic happens — where protocols stop being templates and start being PERSONAL.
+
+The enrichment layer is prefaced on one thing: knowing who they are. Not their persona. Not their sector. WHO. THEY. ARE. What they've done. What they believe. What they're hiding from. What they're reaching for.
+
+This is the difference between generating a generic `governance.json` and generating one that reflects THIS person's actual commitments. It's the difference between "here's a template" and "here's YOU, expressed as a protocol."
+
+The Button's enrichment sources:
+- **Conversation context** — What they said during SPR loops. What they emphasized. What they skipped.
+- **Network signals** — If they have existing connections, what do those connections' protocols look like? Alignment matters.
+- **Behavioral cues** — Did they rush through? Did they linger on governance? Did they skip payments? Every choice is data.
+- **Reference comparison** — How do their responses compare to MVH, to other businesses in their sector, to successful protocol sets?
+
+The enrichment layer turns the Protocol Explorer from a form wizard into a mirror. "Here's who you are. Here's what you've committed to. Here's what the network sees when they look at you."
+
+The story — the presentation — is more important than the product itself. A perfectly structured governance.json that the person doesn't FEEL is worthless. A rough draft that makes them say "that's exactly who I am" is priceless. The enrichment layer optimizes for recognition, not completeness.
+
+---
+
+## XV. Building This Today
 
 ### Week 1: The Core Toolkit
 
@@ -1196,7 +1290,7 @@ A dream is vulnerable. It's someone saying "this is what I want" to the open net
 
 ---
 
-## XV. What This Means for the Coalition
+## XVI. What This Means for the Coalition
 
 The Protocol Explorer solves Paul's friend's problem. He doesn't want noise. He doesn't want a manifesto. He wants magic.
 
