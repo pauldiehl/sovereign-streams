@@ -338,6 +338,24 @@ The coalition member's revenue comes from:
 
 5. **The network itself becomes valuable.** As the coalition grows, the network's aggregate trust, data, and capability become enormously valuable. Not in a "we own the data" way, but in a "we ARE the economy" way. The value accrues to participants proportionally to their trust contribution.
 
+### Radical Generosity as an Economic Signal
+
+Radical generosity isn't just a philosophy. It's an economic signal — and the math behind it has fundamentally changed.
+
+Companies have always dealt with trust equity whether they call it that or not. Customer Acquisition Cost (CAC) is the metric: companies routinely pay hundreds of dollars to acquire a single customer. Some have even talked about compensating customers for their data. The entire advertising industry exists because trust is expensive to build and attention is expensive to earn.
+
+Here's what's different now: the cost of delivering massive value has collapsed.
+
+Before AI, "I want to help my friend who's struggling" meant abandoning your family for your friends — hours, days, weeks of personal labor to deliver something meaningful. The generosity was real but the cost was prohibitive. You couldn't scale it without burning out.
+
+Now? $10 in API tokens and 20 minutes of your time can deliver a $500 cash-equivalent outcome — a new business jumpstarted, a dream unblocked, a journey begun. Not a lead magnet. Not a free trial. A fully realized deliverable that creates a believer. Someone who received magic and knows it.
+
+That's a CAC, technically. But the metric barely captures what happened. Traditional CAC buys attention. This buys belief. Traditional CAC acquires a customer who might churn next month. This creates an ally who remembers what you gave them and what it meant. The trust generated isn't transactional — it's foundational.
+
+The hard part is measuring it. There's no clean metric for "I gave someone magic and they believe now." It's high value delivered up front, no strings attached, and the return is trust equity that compounds through the network in ways that resist quantification. But the input cost is now so low that the ROI is almost absurd — even by traditional CAC standards, $10 to create a lifelong network participant is an order of magnitude better than anything Web 2.0 advertising ever achieved.
+
+This is what makes radical generosity viable as a *strategy* and not just a *value*. The economic conditions didn't exist before. Now they do.
+
 ---
 
 ## X. Trust Equity and Structureless Momentum
