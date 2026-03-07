@@ -405,7 +405,25 @@ This matters because the word "coalition" carries baggage from Web 2.0 (backstab
 
 ### Encounters, Not Teams
 
-P2P is the real game. Not large teams where twenty people attend twenty meetings just to decide the brand logo and nobody leaves happy.
+This isn't anti-collaboration. It's anti-team-dysfunction.
+
+A "team" is a system designed as a well-meaning collaboration where everyone is heard and only the best ideas emerge. In practice, that's almost never what happens. What actually happens: someone calls the shots and usurps control to guide the project their way (the control freak). Others feel they have no choice due to conflicting personalities and just go along (the lackeys). Others contribute very little and coast on the group's output (the free-loaders). Twenty meetings to decide the brand logo. Nobody leaves happy.
+
+The math backs this up. **Price's Law** says the square root of the total number of members does 50% of the work — in a 16-person team, 4 people carry half the load. **Metcalfe's Law** says communication channels grow with the square of team size — a 4-person team has 6 channels, a 10-person team has 45, and the complexity explodes. **Lanchester's Square Law** says losing one member reduces a team's effectiveness disproportionately because the remaining members absorb increased pressure.
+
+These aren't flaws in individual people. They're structural realities of the team model itself. Web 4.0 doesn't fix people. It fixes the structure.
+
+**Sovereignty flips Price's Law.** When every individual operates as their own kingdom — fully responsible, fully motivated, fully empowered — the productivity distribution changes. No lackeys. No free-loaders. Individual responsibility means individual speed and individual power. People who have been stuck under someone else's system suddenly have self-determination. They produce more because they own their output.
+
+**Agentic systems flip Metcalfe's Law.** One person with 1,000 communication channels sounds impossibly complex — until those channels are managed by an agentic system that handles 80% in the background. The Waystation absorbs the volume. The agents filter the noise. You get the streamlined recommendations without sitting through 45 cross-channel meetings.
+
+**Agentic systems flip Lanchester's Law.** What if your agentic system IS part of your team? A single sovereign operator with an intelligent agent network isn't a team of one — it's a force multiplier. You don't lose effectiveness when "team members" drop off because your agents don't drop off. They're always running, always available, always working.
+
+There are open problems with this model — scaling trust, managing complexity at the edges, handling domains that genuinely require deep synchronous collaboration. But the sovereignty and freedom effect is real. The individual, properly equipped, outperforms the dysfunctional team.
+
+### The Encounter Pattern
+
+So what replaces the team? Encounters. P2P interactions between sovereign operators.
 
 An encounter is this: you're walking on the street and you bump into a friend. You share where you are in life. The exchange is quick — you find some high-level alignment. And since you're both capable operators, you both say: *"I'll have my people talk to your people."*
 
