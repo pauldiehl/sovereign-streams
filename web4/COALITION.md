@@ -393,7 +393,51 @@ See [PRODUCT-PORTFOLIO.md](./PRODUCT-PORTFOLIO.md) for the specific products.
 
 ---
 
-## XI. Context-Sensitive Giving: Don't Add to the Noise
+## XI. Encounters: The Collaboration Model
+
+**v0.4.0 addition:** The coalition's collaboration model isn't partnership. It isn't consensus. It's encounters.
+
+### What the Coalition Is Not
+
+The Coalition is not a partnership. It's not an agreement. It's not consensus. At best, coalition members are friends. At worst, they're people who recognize they're walking the same journey. That's the full spectrum. There is no contract between those two points.
+
+This matters because the word "coalition" carries baggage from Web 2.0 (backstabbing partnerships, equity fights, NDA-protected alliances) and Web 3.0 (failed consensus, governance token voting, DAO proposals that die in committee). The Coalition is neither. It is simply a group of sovereign entities who happen to share a direction.
+
+### Encounters, Not Teams
+
+P2P is the real game. Not large teams where twenty people attend twenty meetings just to decide the brand logo and nobody leaves happy.
+
+An encounter is this: you're walking on the street and you bump into a friend. You share where you are in life. The exchange is quick — you find some high-level alignment. And since you're both capable operators, you both say: *"I'll have my people talk to your people."*
+
+Who are these people? They're agents. Intelligent representatives that each of you trusts. They're specialized. Good at what they do. They don't have final say, but they make recommendations and give you the streamlined version without the noise.
+
+So the agents talk. One passes out a proposed itinerary — very sharp, very structured. The other shares pictures of a vision board — visual, aspirational, different protocol entirely. Two different agents, two different styles, both trying to have the same conversation. Maybe using different protocols. Because Web 4.0 is not cookie cutter — and maybe this very conversation is about each side making its case for their way of thinking.
+
+Ultimately, they bring back what they captured to each of us. The bosses. We make decisions on that intel.
+
+### Sovereign Adoption, Not Compromise
+
+Here's what does NOT happen: we don't sit down and negotiate a shared document that I reluctantly sign my name to.
+
+I own all my docs. He owns his. We just happen to write a lot of the same things — because we choose to. We are beyond "who came up with it" because we each believe in meritocracy by virtue of Web 4.0 principles. If his idea is better, I adopt it into my own protocols. If mine is better, he adopts it into his. There is no split in the middle. No compromise in the old sense. No reluctant agreement.
+
+It's all learning and adoption at the personal level. We are each our own kingdoms.
+
+Now — owning the protocols that enable that collaboration does make a difference. There will be many opinionated ways to do it, and many personalities. Paul has an opinionated way, and he could be very wrong in many areas — or rather, could discover someone who has it way better. That's what's awesome. The hope is to have run-ins with those individuals. There will be many fluid and better ways. The protocols evolve through encounters, not committees.
+
+### The Deeper Move: Sovereignty Through Generosity
+
+Even the act of pushing for collaboration in an opinionated way sends out a signal of sovereignty. The strategy is to be MORE AGGRESSIVE than anyone else — not in competition, but in *giving*.
+
+Every time you align with someone who you gave exactly what they needed — and they're the type to RECOGNIZE IT AND GIVE BACK (not the type where large gestures are forgotten) — those are the people you onboard into Web 4.0. And it becomes YOUR vision of Web 4.0.
+
+Web 4.0, in a sense, is yours if you want it to be. Not because you control it — you can't control a sovereign network. But because the people who joined did so because YOUR generosity lit the match. YOUR protocols were what they adopted. YOUR encounters shaped their thinking. The network forms around the most aggressive giver because that's where the gravity is.
+
+This is the inversion of every previous collaboration model: you don't accumulate power by taking or negotiating. You accumulate influence by giving so relentlessly that the network organizes around your wake.
+
+---
+
+## XII. Context-Sensitive Giving: Don't Add to the Noise
 
 **v0.3.0 addition:** A conversation with a colleague crystallized something important about radical generosity.
 
@@ -431,7 +475,7 @@ This is itself convergent syndication in action — reverse syndication to under
 
 ---
 
-## XII. First Steps
+## XIII. First Steps
 
 1. **Name the coalition.** It needs an identity. Not a corporate brand — a movement identifier.
 2. **Define the initial offering.** What EXACTLY does Paul give to the first 5-10 coalition members? Specific platforms, components, architectures, playbooks.
@@ -453,3 +497,4 @@ This is itself convergent syndication in action — reverse syndication to under
 - [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — How the Coalition feeds the growth strategy
 - [Threat Landscape](./THREAT-LANDSCAPE.md) — What the Coalition defends against
 - [Agentic Progression](./AGENTIC-PROGRESSION.md) — The three stages the Coalition accelerates
+- [Waystation Architecture](./WAYSTATION-ARCHITECTURE.md) — Infrastructure for agent-to-agent encounters
