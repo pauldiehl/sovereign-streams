@@ -793,6 +793,14 @@ Step 3: RESPOND — Ryan's agent evaluates, notifies Ryan, or auto-responds
 
 The critical insight: the gap between "I have protocols" and "agents can interact with me" is the live service. Without it, Web 4.0 is read-only. WITH it, it's an economy.
 
+### The Waystation Pattern
+
+This gap — between static beacons and a live, conversational endpoint — led to the **Waystation architecture**: a three-layer design pattern for Web 4.0 nodes. Static Beacons (Layer 1) for discovery. An intelligent serverless proxy (Layer 2 — the Waystation) that's always on, LLM-enabled, and handles ~80% of agent interactions autonomously. And a sovereign Local Agent (Layer 3) that pulls from the Waystation's queue when you're ready and handles the 20% that requires personal attention.
+
+The Waystation is your embassy on the open internet — defensive by nature, always available, intelligent enough to converse on your behalf, but never home. Home is your local machine. The highest decisions always happen there.
+
+The full Waystation architecture is documented in **[WAYSTATION-ARCHITECTURE.md](./WAYSTATION-ARCHITECTURE.md)** — including tiered setup (coalition → personal serverless → full stack), interface options, queue semantics, security model, and the peer-to-peer coexistence pattern.
+
 ### Agentic Engineering vs. Agentic Execution
 
 These two hosting problems (protocols + live service) surface a fundamental distinction in how agents help people:
