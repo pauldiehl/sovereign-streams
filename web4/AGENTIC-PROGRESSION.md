@@ -14,7 +14,7 @@
 
 ## The Arc
 
-Web 4.0 doesn't arrive all at once. It arrives in three stages — each one a fundamental shift in the relationship between humans, agents, and the systems they build together. Each stage is a progression. Each one makes the previous one look primitive. And each one is already visible if you know where to look.
+Web 4.0 doesn't arrive all at once. It arrives in four stages — each one a fundamental shift in the relationship between humans, agents, and the systems they build together. Each stage is a progression. Each one makes the previous one look primitive. And each one is already visible if you know where to look.
 
 These stages are not a roadmap of what to build. They're a map of **what's happening to us** — right now, and in the near future. The tools are changing how we think about software, interfaces, and value exchange. The progression is inevitable. The question is whether you ride the wave or get swept by it.
 

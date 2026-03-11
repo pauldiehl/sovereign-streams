@@ -222,5 +222,5 @@ This is why the Trojan Horse strategy matters. Don't sell "open protocols" and "
 - [Web 4.0 Manifesto](./MANIFESTO.md) — The vision
 - [Agent Exchange](./AGENT-EXCHANGE.md) — The decentralized trust layer
 - [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — Speed as defense
-- [Agentic Progression](./AGENTIC-PROGRESSION.md) — The three stages
+- [Agentic Progression](./AGENTIC-PROGRESSION.md) — The four stages
 - [Web4.0 Simulation](./WEB4-SIMULATION.md) — Testing resistance and failure modes

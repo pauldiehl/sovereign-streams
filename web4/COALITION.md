@@ -532,5 +532,5 @@ This is itself convergent syndication in action — reverse syndication to under
 - [Agent Exchange](./AGENT-EXCHANGE.md) — Discovery layer
 - [Tsunami Roadmap](./TSUNAMI-ROADMAP.md) — How the Coalition feeds the growth strategy
 - [Threat Landscape](./THREAT-LANDSCAPE.md) — What the Coalition defends against
-- [Agentic Progression](./AGENTIC-PROGRESSION.md) — The three stages the Coalition accelerates
+- [Agentic Progression](./AGENTIC-PROGRESSION.md) — The four stages the Coalition accelerates
 - [Waystation Architecture](./WAYSTATION-ARCHITECTURE.md) — Infrastructure for agent-to-agent encounters
