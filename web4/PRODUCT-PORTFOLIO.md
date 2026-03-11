@@ -21,7 +21,27 @@ MVH is already running, already has users, already generates revenue. The move: 
 
 When showing Joey or any Milliprime "here's what Web 4.0 looks like in production," point to manvshealth.com — REAL protocols on a REAL business making REAL money. More convincing than any manifesto. The dual-track is literal: MVH makes money today (Web 2.0) and IS the Web 4.0 demo.
 
-**This week:** Deploy Protocol Explorer protocols on manvshealth.com.
+**Phase 1 (this week):** Deploy Protocol Explorer protocols on manvshealth.com.
+
+#### Phase 2: AR1 — The Conversation Experience
+
+MVH Phase 2 is the first deployment of AR1 — the Layer Cake bridge to agentic rendering. This was originally conceived as Phase 4, but AR1 makes it buildable now. The timeline accelerates because the conversation-first architecture doesn't require full agentic rendering infrastructure — it's a layer on top of what exists.
+
+**The experience:** A client opens the app and starts a conversation — voice or text. They can choose "old school" (static sites, forms, the current experience) or "new age" (the AR1 conversation agent). If they choose new age, they engage with an intelligent system grounded in MVH's protocols, governance, and opinionated health knowledge.
+
+**How it flows (allergy example):**
+
+The client says they have allergies. The agent asks what they're doing about it. Benadryl. The agent — grounded in MVH's protocols that favor at-home, low-intervention health solutions — shares an opinion: have you heard about the new allergists doing three-to-five year immunotherapy? More natural, adaptive immunity, not corticosteroids. The client is interested. Education happens naturally inside the conversation. The agent probes how far they want to go. Proactively pushes toward nutrition as the foundational pillar (because that's MVH's opinionated stance). The conversation narrows to a minimal set of inputs, and a personalized portal experience materializes — a plan, the reasoning behind it, high-level guidance. "Here's a starting point. Want more?"
+
+**The Profig:** Client data lives in a flexible, non-constrained profile — JSON5-style, NoSQL. No rigid schema. It captures the streamlined essence of what the conversation reveals. Sparse on day one, rich by session twenty. Every subsequent interaction references it. The portal adapts as it grows.
+
+**Live Dream Beacons:** Clients can suggest the experience they want — a feature, a view, a different way of seeing their health data. The system either delivers immediately or queues it. One client's brilliant idea might become tomorrow's development priority.
+
+**The backlog:** User desires drive what gets built. Whether one user or many, the system evaluates impact. Some items are immediate actions taken that day. Some go dormant. The experience is truly adaptive — to everything the client wants, to how their journey goes.
+
+This will be the best conversation agent experience available — not because the agent is smarter, but because it's grounded in real protocols, real governance, and a provider's deep, opinionated knowledge base. It captures and educates. It does intake and prepares offers. It adapts for both the client and the provider. Both sides get more than they thought possible. They finally have the same conversation.
+
+See [AGENTIC-RENDERING.md](./AGENTIC-RENDERING.md) Section XI for the AR1 architecture.
 
 ### Initiative #2: Good Vibes + PUP + Audacity — The Match
 
