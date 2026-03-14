@@ -407,3 +407,4 @@ That's the architecture. Three layers. Static beacons for discovery. An intellig
 - [Agent Intake Protocol](https://agent-intake-protocol.github.io/agent-intake-protocol/) — The intake protocol the Waystation speaks
 - [Convergent Syndication](./CONVERGENT-SYNDICATION.md) — How protocols spread through the trust network
 - [The Coalition](./COALITION.md) — Who builds and hosts shared Waystation infrastructure
+- [Protocol Maturity](./PROTOCOL-MATURITY.md) — The Strangler Pattern: how Waystation interactions crystallize from agentic to deterministic

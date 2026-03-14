@@ -641,3 +641,4 @@ What remains is the hard work: thinking clearly about what the experience should
 - [Stream Exchange Protocol v0.1.0](./spec/2026-02-28/)
 - [SEP Evolution Roadmap](./spec/SEP-EVOLUTION.md)
 - [Web 4.0 Economics](./WEB4-ECONOMICS.md)
+- [Protocol Maturity](./PROTOCOL-MATURITY.md) — The Strangler Pattern: how agentic rendering crystallizes into deterministic serving at scale
